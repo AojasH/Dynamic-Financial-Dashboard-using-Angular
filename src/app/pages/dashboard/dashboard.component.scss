@@ -1,0 +1,71 @@
+@import "../../../assets/styles/variables.scss";
+
+.main_content {
+	background-color: $backgroundColor;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 15px;
+	gap: 15px;
+	flex: 1 1 auto;
+}
+
+.left_container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+
+	.mini_card_container {
+		display: flex;
+		flex-grow: 1;
+		flex-wrap: wrap;
+		gap: 15px;
+
+		.mini_card {
+			flex: 1 1 auto;
+		}
+	}
+
+	.overview_card {
+		width: 100%;
+	}
+}
+
+.right_container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 1666px) {
+	.mini_card:first-of-type {
+		width: 100%;
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.main_content {
+		padding: 30px;
+		gap: 30px;
+		flex-wrap: nowrap;
+	}
+
+	.left_container {
+		flex: 1 1 auto;
+		gap: 30px;
+		max-height: 715px;
+
+		.mini_card_container {
+			gap: 30px;
+		}
+	}
+
+	.right_container {
+		flex: 1 1 auto;
+		width: 60%;
+		min-width: 370px;
+		max-height: 715px;
+	}
+}

@@ -1,0 +1,76 @@
+@import "../../../../assets/styles/variables.scss";
+
+.card_container {
+	background-color: white;
+	padding: 5px 15px 15px 15px;
+	border-radius: 5px;
+	border-top: 5px solid white;
+	display: flex;
+	flex-direction: column;
+	min-width: 150px;
+}
+
+.card_container--dark {
+	border-top: 5px solid #ff4b3e;
+	background-color: $fifthColor;
+	color: $textColor-primary;
+
+	.title {
+		color: $fourthColor;
+	}
+}
+
+.icon {
+	font-size: 4.5rem;
+	position: absolute;
+	opacity: 0.1;
+	align-self: flex-end;
+	// margin-top: -35px;
+}
+
+.title {
+	margin-top: 20px;
+	font-size: 0.9rem;
+}
+
+.value {
+	margin-top: 10px;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	.card_container {
+		padding: 5px 25px 25px 25px;
+	}
+
+	.title {
+		font-size: 1.2rem;
+	}
+
+	.value {
+		font-size: 1.6rem;
+	}
+
+	.icon {
+		font-size: 4.8rem;
+		margin-top: 7px;
+	}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

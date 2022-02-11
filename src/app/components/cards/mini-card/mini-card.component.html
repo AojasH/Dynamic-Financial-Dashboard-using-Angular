@@ -1,0 +1,7 @@
+<div class="card_container" [ngClass]="{ 'card_container--dark': dark }">
+	<div class="icon">
+		<i class="lni lni-{{ icon }}"></i>
+	</div>
+	<div class="title">{{ title }}</div>
+	<div class="value">{{ value | currency: "BRL" }}</div>
+</div>

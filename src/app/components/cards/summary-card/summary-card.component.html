@@ -1,0 +1,30 @@
+<div class="card">
+	<div class="card_title">Resumo Mensal</div>
+
+	<div class="chart_container">
+		<app-summary-pie></app-summary-pie>
+	</div>
+
+	<div class="month_comparison_container">
+		<div class="comparison_title"><p>Comparação (Mês)</p></div>
+
+		<div class="current_month_container">
+			<p>Fevereiro</p>
+
+			<div class="bar">
+				<div class="percentage current_month">
+					{{ 1453.23 | currency: "BRL" }}
+				</div>
+			</div>
+		</div>
+		<div class="last_month_container">
+			<p>Janeiro</p>
+
+			<div class="bar">
+				<div class="percentage last_month">
+					{{ 986.45 | currency: "BRL" }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

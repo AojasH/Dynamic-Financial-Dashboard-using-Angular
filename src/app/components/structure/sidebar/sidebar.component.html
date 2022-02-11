@@ -1,0 +1,43 @@
+<div
+	class="sidebar_container"
+	[ngClass]="{ 'sidebar_container--expanded': isSidebarExpanded }"
+>
+	<div class="title" (click)="toggleSidebar($event)">
+		<div *ngIf="isSidebarExpanded; else mobileTitle">
+			<div class="icon"><i class="lni lni-money-protection"></i></div>
+		</div>
+
+		<ng-template #mobileTitle>
+			<div class="icon-menu"><i class="lni lni-menu"></i></div>
+		</ng-template>
+
+		<p class="text">Finance</p>
+	</div>
+	<div class="items">
+		<div class="item">
+			<app-item
+				text="Painel"
+				icon="home"
+				[active]="true"
+				routerLink="/dashboard"
+				[isSidebarExpanded]="isSidebarExpanded"
+			></app-item>
+		</div>
+		<div class="item">
+			<app-item
+				text="Investimentos"
+				icon="investment"
+				routerLink="/investment"
+				[isSidebarExpanded]="isSidebarExpanded"
+			></app-item>
+		</div>
+		<div class="item">
+			<app-item
+				text="Configurações"
+				icon="cog"
+				routerLink="/config"
+				[isSidebarExpanded]="isSidebarExpanded"
+			></app-item>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<div class="main_content">
+	<div class="left_container">
+		<div class="mini_card_container">
+			<div class="mini_card">
+				<app-mini-card
+					title="Balanço"
+					icon="wallet"
+					[value]="balance"
+					[dark]="true"
+				></app-mini-card>
+			</div>
+			<div class="mini_card">
+				<app-mini-card
+					title="Entrada"
+					icon="revenue"
+					[value]="income"
+				></app-mini-card>
+			</div>
+			<div class="mini_card">
+				<app-mini-card
+					title="Saída"
+					icon="target-revenue"
+					[value]="outgoing"
+				></app-mini-card>
+			</div>
+		</div>
+
+		<app-overview-card class="component_fill"></app-overview-card>
+	</div>
+
+	<div class="right_container">
+		<app-summary-card class="component_fill"></app-summary-card>
+	</div>
+</div>
