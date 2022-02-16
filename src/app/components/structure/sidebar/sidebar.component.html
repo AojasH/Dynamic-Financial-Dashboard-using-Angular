@@ -2,13 +2,17 @@
 	class="sidebar_container"
 	[ngClass]="{ 'sidebar_container--expanded': isSidebarExpanded }"
 >
-	<div class="title" (click)="toggleSidebar($event)">
+	<div class="sidebar_title" (click)="toggleSidebar($event)">
 		<div *ngIf="isSidebarExpanded; else mobileTitle">
-			<div class="icon"><i class="lni lni-money-protection"></i></div>
+			<div class="sidebar_icon">
+				<i class="lni lni-money-protection"></i>
+			</div>
 		</div>
 
 		<ng-template #mobileTitle>
-			<div class="icon-menu"><i class="lni lni-menu"></i></div>
+			<div class="sidebar_iconicon-menu">
+				<i class="lni lni-menu"></i>
+			</div>
 		</ng-template>
 
 		<p class="text">Finance</p>

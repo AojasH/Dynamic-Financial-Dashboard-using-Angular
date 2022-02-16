@@ -28,11 +28,9 @@
 						"inlineStyleLanguage": "scss",
 						"assets": ["src/favicon.ico", "src/assets"],
 						"styles": [
-							"src/assets/styles/reset.scss",
-							"src/assets/styles/variables.scss",
-							"src/assets/styles/fonts.scss",
 							"src/assets/styles/styles.scss",
-							"src/assets/icons/lineicons/icon-font/lineicons.css"
+							"src/assets/icons/lineicons/icon-font/lineicons.css",
+							"node_modules/bulma/bulma.sass"
 						],
 						"scripts": []
 					},
