@@ -1,8 +1,8 @@
 @import "../../../../assets/styles/variables.scss";
 
 .sidebar_container {
-	background-color: $sidebarBackgroud;
-	color: $textColor-primary;
+	background-color: $background-color-dark;
+	color: $text-color-primary;
 
 	display: flex;
 	flex-direction: column;
@@ -13,7 +13,7 @@
 	z-index: 1;
 
 	.sidebar_title {
-		color: $textColor-primary !important;
+		color: $text-color-primary !important;
 
 		display: flex;
 		justify-content: center;
@@ -25,16 +25,16 @@
 		font-weight: bold;
 
 		.sidebar_icon {
-			color: $mainColor;
+			color: $color-primary;
 
 			font-size: 2.5rem;
 		}
 
 		.sidebar_icon-menu {
-			color: $mainColor;
+			color: $color-primary;
 		}
 
-		.text {
+		.sidebar_text {
 			width: 0;
 			opacity: 0;
 			transition: 0.3s;
@@ -59,7 +59,7 @@
 	transition: 0.3s;
 
 	.sidebar_title {
-		.text {
+		.sidebar_text {
 			width: auto;
 			opacity: 1;
 			margin-left: 10px;
@@ -95,7 +95,7 @@
 				margin-right: 10px;
 			}
 
-			.text {
+			.sidebar_text {
 				width: auto;
 				opacity: 1;
 			}

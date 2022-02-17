@@ -1,39 +1,19 @@
+@import "./variables.scss";
+
 html,
 body {
 	font-family: "Montserrat", sans-serif;
-	background-color: #3f3f3f !important;
+	background-color: $background-color-secondary !important;
+	color: $text-color-dark !important;
 }
 
-// .component_fill {
-// 	display: flex;
-// 	flex-direction: column;
-// 	flex: 1 1 auto;
-// }
+.box {
+	box-shadow: 0 0 0 0 !important;
+	color: $text-color-dark !important;
+}
 
-// .card {
-// 	background-color: white;
-// 	padding: 15px 15px 15px 15px;
-// 	border-radius: 5px;
-// 	border-top: 5px solid white;
-// 	display: flex;
-// 	flex-direction: column;
-// 	flex: 1 1 auto;
-// 	justify-content: space-between;
-// }
-
-// .card_title {
-// 	font-size: 1.2rem;
-// 	font-weight: 700;
-// 	margin-bottom: 20px;
-// }
-
-// /* Large devices (laptops/desktops, 992px and up) */
-// @media only screen and (min-width: 992px) {
-// 	.card_title {
-// 		margin-bottom: 30px;
-// 	}
-
-// 	.card {
-// 		padding: 25px 30px 30px 30px;
-// 	}
-// }
+.box_title {
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+}

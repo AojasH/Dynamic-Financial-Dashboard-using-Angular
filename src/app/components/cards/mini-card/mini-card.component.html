@@ -1,7 +1,4 @@
-<div class="card_container" [ngClass]="{ 'card_container--dark': dark }">
-	<div class="icon">
-		<i class="lni lni-{{ icon }}"></i>
-	</div>
-	<div class="title">{{ title }}</div>
-	<div class="value">{{ value | currency: "BRL" }}</div>
+<div class="box" [ngClass]="{ 'box--dark': dark }">
+	<div class="minicard_title">{{ title }}</div>
+	<div class="minicard_value">{{ value | currency: "BRL" }}</div>
 </div>

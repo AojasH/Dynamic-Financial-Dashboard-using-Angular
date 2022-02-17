@@ -1,11 +1,8 @@
 @import "../assets/styles/variables.scss";
 
 .content {
-	// display: flex;
-	// flex-direction: column;
-
-	color: $secondColor;
-	background-color: $backgroundColor;
+	color: $color-secondary;
+	background-color: $background-color-clear;
 
 	margin-left: 60px;
 	transition: 0.3s;

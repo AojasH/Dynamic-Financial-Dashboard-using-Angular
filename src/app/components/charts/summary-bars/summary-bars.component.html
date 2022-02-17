@@ -1,11 +1,15 @@
-<div class="chart_container">
-	<canvas
-		baseChart
-		[data]="barChartData"
-		[options]="barChartOptions"
-		[plugins]="barChartPlugins"
-		[type]="barChartType"
-		[hidden]="!showChart"
-	>
-	</canvas>
-</div>
+<apx-chart
+	[series]="chartOptions.series"
+	[chart]="chartOptions.chart!"
+	[labels]="chartOptions.labels!"
+	[dataLabels]="chartOptions.dataLabels!"
+	[plotOptions]="chartOptions.plotOptions!"
+	[responsive]="chartOptions.responsive!"
+	[legend]="chartOptions.legend!"
+	[colors]="chartOptions.colors!"
+	[tooltip]="chartOptions.tooltip!"
+	[states]="chartOptions.states!"
+	[xaxis]="chartOptions.xaxis!"
+	[fill]="chartOptions.fill!"
+	#chart
+></apx-chart>
