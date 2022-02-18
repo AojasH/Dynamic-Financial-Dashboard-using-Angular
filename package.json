@@ -18,9 +18,10 @@
 		"@angular/platform-browser": "~13.2.0",
 		"@angular/platform-browser-dynamic": "~13.2.0",
 		"@angular/router": "~13.2.0",
-		"apexcharts": "^3.33.1",
 		"bulma": "^0.9.3",
-		"ng-apexcharts": "^1.7.0",
+		"chart.js": "^3.6.0",
+		"chartjs-plugin-datalabels": "^2.0.0",
+		"ng2-charts": "^3.0.8",
 		"rxjs": "~7.5.0",
 		"tslib": "^2.3.0",
 		"zone.js": "~0.11.4"

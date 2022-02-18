@@ -2,6 +2,93 @@
 
 .main_content {
 	background-color: $background-color-clear;
-	padding: 24px;
+	padding: 15px;
+}
+
+.minicard_balance {
+	grid-area: minicard_balance;
+}
+.minicard_income {
+	grid-area: minicard_income;
+}
+.minicard_outgoing {
+	grid-area: minicard_outgoing;
+}
+.summary {
+	grid-area: summary;
+}
+.overview {
+	grid-area: overview;
+}
+
+.grid_container {
+	display: grid;
 	gap: 24px;
+	grid-template-areas:
+		"minicard_balance"
+		"minicard_income"
+		"minicard_outgoing"
+		"overview"
+		"summary";
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	.grid_container {
+		grid-template-areas:
+			"minicard_balance summary"
+			"minicard_income summary"
+			"minicard_outgoing summary"
+			"overview summary";
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.grid_container {
+		grid-template-areas:
+			"minicard_balance minicard_balance summary"
+			"minicard_income minicard_outgoing summary"
+			"overview overview summary";
+	}
+}
+
+// Large device half screen (desktops, 880px and up)
+@media (min-width: 880px) {
+	.grid_container {
+		grid-template-areas:
+			"minicard_balance minicard_income minicard_outgoing summary"
+			"overview overview overview summary";
+	}
+
+	.summary {
+		min-width: 250px;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.grid_container {
+		grid-template-areas:
+			"minicard_balance minicard_balance summary"
+			"minicard_income minicard_outgoing summary"
+			"overview overview summary";
+	}
+
+	.main_content {
+		padding: 25px;
+	}
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.grid_container {
+		grid-template-areas:
+			"minicard_balance minicard_income minicard_outgoing summary"
+			"overview overview overview summary";
+	}
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
 }

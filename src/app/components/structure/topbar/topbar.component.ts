@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./topbar.component.scss'],
 })
 export class TopbarComponent implements OnInit {
-	title = 'Painel';
+	title = 'Dashboard';
 
 	constructor() {}
 

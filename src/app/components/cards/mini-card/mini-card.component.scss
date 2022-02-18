@@ -1,28 +1,32 @@
 @import "../../../../assets/styles/variables.scss";
 
-.box {
-	padding-top: 15px !important;
-	border-top: 5px solid white;
+.card_box {
+	padding-top: 10px !important;
+	border-top: 1px solid $border-color;
 }
 
-.box--dark {
+.card_box--dark {
 	border-top: 5px solid $color-primary;
-	background-color: $background-color-dark;
+	background-color: $background-color;
 	color: $text-color-primary !important;
 
 	.minicard_title {
-		color: $background-color-clear !important;
+		margin-top: -4px;
+		color: $text-color-primary !important;
 	}
 }
 
 .minicard_title {
+	color: $text-color-secondary;
 	font-size: 1.1rem;
+	line-height: 1.1rem;
 }
 
 .minicard_value {
-	margin-top: 10px;
-	font-size: 1.2rem;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
 	font-weight: 600;
+	margin-top: 10px;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -40,11 +44,17 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 	.minicard_title {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
+		line-height: 1.1rem;
 	}
 
 	.minicard_value {
-		font-size: 1.6rem;
+		line-height: 1.8rem;
+		font-size: 1.8rem;
+	}
+
+	.card_box {
+		padding-top: 20px !important;
 	}
 }
 

@@ -4,9 +4,9 @@
 >
 	<div class="sidebar_title" (click)="toggleSidebar($event)">
 		<div *ngIf="isSidebarExpanded; else mobileTitle">
-			<div class="sidebar_icon">
+			<!-- <div class="sidebar_icon">
 				<i class="lni lni-money-protection"></i>
-			</div>
+			</div> -->
 		</div>
 
 		<ng-template #mobileTitle>
@@ -15,12 +15,12 @@
 			</div>
 		</ng-template>
 
-		<p class="sidebar_text">Finance</p>
+		<p class="sidebar_text">Finance App</p>
 	</div>
 	<div class="items">
 		<div class="item">
 			<app-item
-				text="Painel"
+				text="Dashboard"
 				icon="home"
 				[active]="true"
 				routerLink="/dashboard"

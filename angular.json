@@ -30,6 +30,7 @@
 						"styles": [
 							"src/assets/styles/styles.scss",
 							"src/assets/icons/lineicons/icon-font/lineicons.css",
+							"src/assets/fonts/work_sans/stylesheet.css",
 							"node_modules/bulma/bulma.sass"
 						],
 						"scripts": [

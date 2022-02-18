@@ -1,7 +1,7 @@
 @import "../../../../assets/styles/variables.scss";
 
 .sidebar_container {
-	background-color: $background-color-dark;
+	background-color: $background-color;
 	color: $text-color-primary;
 
 	display: flex;
@@ -20,14 +20,16 @@
 		align-items: center;
 
 		font-size: 2rem;
-		height: 100px;
+		padding-top: 30px;
+		padding-bottom: 10px;
 
-		font-weight: bold;
+		font-weight: 600;
 
 		.sidebar_icon {
 			color: $color-primary;
 
 			font-size: 2.5rem;
+			font-weight: 900;
 		}
 
 		.sidebar_icon-menu {
@@ -86,8 +88,8 @@
 		width: 250px;
 
 		.items {
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: 20px;
+			padding-right: 20px;
 		}
 
 		.sidebar_title {

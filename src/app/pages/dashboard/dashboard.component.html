@@ -1,44 +1,23 @@
 <div class="main_content">
-	<div class="columns">
-		<div class="column is-7">
-			<div class="columns is-multiline tile" #miniCards>
-				<div class="column is-full-mobile">
-					<div class="mini_card">
-						<app-mini-card
-							title="Balanço"
-							[value]="balance"
-							[dark]="true"
-						></app-mini-card>
-					</div>
-				</div>
-				<div class="column">
-					<div class="mini_card">
-						<app-mini-card
-							title="Entrada"
-							[value]="income"
-						></app-mini-card>
-					</div>
-				</div>
-				<div class="column">
-					<div class="mini_card">
-						<app-mini-card
-							title="Saída"
-							[value]="outgoing"
-						></app-mini-card>
-					</div>
-				</div>
-			</div>
-
-			<div class="columns">
-				<div class="column">
-					<app-overview-card></app-overview-card>
-				</div>
-			</div>
+	<div class="grid_container">
+		<div class="minicard_balance">
+			<app-mini-card
+				title="Balanço"
+				[value]="balance"
+				[dark]="true"
+			></app-mini-card>
 		</div>
-		<div class="column">
-			<div class="summary_card_container" #summaryCard>
-				<app-summary-card></app-summary-card>
-			</div>
+		<div class="minicard_income">
+			<app-mini-card title="Entrada" [value]="income"></app-mini-card>
+		</div>
+		<div class="minicard_outgoing">
+			<app-mini-card title="Saída" [value]="outgoing"></app-mini-card>
+		</div>
+		<div class="summary">
+			<app-summary-card></app-summary-card>
+		</div>
+		<div class="overview">
+			<app-overview-card></app-overview-card>
 		</div>
 	</div>
 </div>

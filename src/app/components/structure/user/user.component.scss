@@ -7,7 +7,7 @@
 
 .avatar {
 	border-radius: 50%;
-	border-color: $color-secondary;
+	border-color: $border-color;
 	border-width: 3px;
 	border-style: solid;
 	width: 35px;
@@ -29,7 +29,7 @@
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 	.avatar {
-		border-width: 4px;
+		border-width: 1px;
 		width: 45px;
 		height: 45px;
 	}

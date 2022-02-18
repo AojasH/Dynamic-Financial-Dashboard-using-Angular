@@ -7,15 +7,15 @@ Author: lineicons.com
 $lni-font-path: "../fonts" !default;
 
 @font-face {
-	font-family: "LineIcons";
-	src: url("../fonts/LineIcons.eot");
-	src: url("../fonts/LineIcons.eot") format("embedded-opentype"),
-		url("../fonts/LineIcons.woff2") format("woff2"),
-		url("../fonts/LineIcons.woff") format("woff"),
-		url("../fonts/LineIcons.ttf") format("truetype"),
-		url("../fonts/LineIcons.svg") format("svg");
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'LineIcons';
+  src: url('#{$lni-font-path}/LineIcons.eot');
+  src: url('#{$lni-font-path}/LineIcons.eot') format('embedded-opentype'),
+    url('#{$lni-font-path}/LineIcons.woff2') format('woff2'),
+    url('#{$lni-font-path}/LineIcons.woff') format('woff'),
+    url('#{$lni-font-path}/LineIcons.ttf') format('truetype'),
+    url('#{$lni-font-path}/LineIcons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*------------------------
@@ -23,15 +23,15 @@ $lni-font-path: "../fonts" !default;
 -------------------------*/
 
 .lni {
-	display: inline-block;
-	font: normal normal normal 1em/1 "LineIcons";
-	color: inherit;
-	flex-shrink: 0;
-	speak: none;
-	text-transform: none;
-	/* Better Font Rendering */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  font: normal normal normal 1em/1 'LineIcons';
+  color: inherit;
+  flex-shrink: 0;
+  speak: none;
+  text-transform: none;
+  /* Better Font Rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /*------------------------
@@ -40,17 +40,17 @@ $lni-font-path: "../fonts" !default;
 
 /* relative units */
 .lni-sm {
-	font-size: 0.8em;
+  font-size: 0.8em;
 }
 .lni-lg {
-	font-size: 1.2em;
+  font-size: 1.2em;
 }
 /* absolute units */
 .lni-16 {
-	font-size: 16px;
+  font-size: 16px;
 }
 .lni-32 {
-	font-size: 32px;
+  font-size: 32px;
 }
 
 /*------------------------
@@ -58,23 +58,23 @@ $lni-font-path: "../fonts" !default;
 -------------------------*/
 
 .lni-is-spinning {
-	animation: lni-spin 1s infinite linear;
+  animation: lni-spin 1s infinite linear;
 }
 
 @keyframes lni-spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*------------------------
   rotated/flipped icons
 -------------------------*/
 
-.lni-rotate-90 {
+.lni-rotate-90  {
 	transform: rotate(90deg);
 }
 
@@ -97,7 +97,7 @@ $lni-font-path: "../fonts" !default;
 	icons
 -------------------------*/
 @function unicode($str) {
-	@return unquote('"\\#{$str}"');
+  @return unquote("\"\\#{$str}\"");
 }
 
 $lni-500px: unicode(ea03);
@@ -634,2129 +634,2130 @@ $lni-zoom-in: unicode(ec12);
 $lni-zoom-out: unicode(ec14);
 
 .lni-500px::before {
-	content: $lni-500px;
+  content: $lni-500px;
 }
 
 .lni-add-files::before {
-	content: $lni-add-files;
+  content: $lni-add-files;
 }
 
 .lni-adobe::before {
-	content: $lni-adobe;
+  content: $lni-adobe;
 }
 
 .lni-agenda::before {
-	content: $lni-agenda;
+  content: $lni-agenda;
 }
 
 .lni-airbnb::before {
-	content: $lni-airbnb;
+  content: $lni-airbnb;
 }
 
 .lni-alarm-clock::before {
-	content: $lni-alarm-clock;
+  content: $lni-alarm-clock;
 }
 
 .lni-alarm::before {
-	content: $lni-alarm;
+  content: $lni-alarm;
 }
 
 .lni-amazon-original::before {
-	content: $lni-amazon-original;
+  content: $lni-amazon-original;
 }
 
 .lni-amazon-pay::before {
-	content: $lni-amazon-pay;
+  content: $lni-amazon-pay;
 }
 
 .lni-amazon::before {
-	content: $lni-amazon;
+  content: $lni-amazon;
 }
 
 .lni-ambulance::before {
-	content: $lni-ambulance;
+  content: $lni-ambulance;
 }
 
 .lni-amex::before {
-	content: $lni-amex;
+  content: $lni-amex;
 }
 
 .lni-anchor::before {
-	content: $lni-anchor;
+  content: $lni-anchor;
 }
 
 .lni-android-original::before {
-	content: $lni-android-original;
+  content: $lni-android-original;
 }
 
 .lni-android::before {
-	content: $lni-android;
+  content: $lni-android;
 }
 
 .lni-angellist::before {
-	content: $lni-angellist;
+  content: $lni-angellist;
 }
 
 .lni-angle-double-down::before {
-	content: $lni-angle-double-down;
+  content: $lni-angle-double-down;
 }
 
 .lni-angle-double-left::before {
-	content: $lni-angle-double-left;
+  content: $lni-angle-double-left;
 }
 
 .lni-angle-double-right::before {
-	content: $lni-angle-double-right;
+  content: $lni-angle-double-right;
 }
 
 .lni-angle-double-up::before {
-	content: $lni-angle-double-up;
+  content: $lni-angle-double-up;
 }
 
 .lni-angular::before {
-	content: $lni-angular;
+  content: $lni-angular;
 }
 
 .lni-apartment::before {
-	content: $lni-apartment;
+  content: $lni-apartment;
 }
 
 .lni-app-store::before {
-	content: $lni-app-store;
+  content: $lni-app-store;
 }
 
 .lni-apple-music::before {
-	content: $lni-apple-music;
+  content: $lni-apple-music;
 }
 
 .lni-apple-pay::before {
-	content: $lni-apple-pay;
+  content: $lni-apple-pay;
 }
 
 .lni-apple::before {
-	content: $lni-apple;
+  content: $lni-apple;
 }
 
 .lni-archive::before {
-	content: $lni-archive;
+  content: $lni-archive;
 }
 
 .lni-arrow-down-circle::before {
-	content: $lni-arrow-down-circle;
+  content: $lni-arrow-down-circle;
 }
 
 .lni-arrow-down::before {
-	content: $lni-arrow-down;
+  content: $lni-arrow-down;
 }
 
 .lni-arrow-left-circle::before {
-	content: $lni-arrow-left-circle;
+  content: $lni-arrow-left-circle;
 }
 
 .lni-arrow-left::before {
-	content: $lni-arrow-left;
+  content: $lni-arrow-left;
 }
 
 .lni-arrow-right-circle::before {
-	content: $lni-arrow-right-circle;
+  content: $lni-arrow-right-circle;
 }
 
 .lni-arrow-right::before {
-	content: $lni-arrow-right;
+  content: $lni-arrow-right;
 }
 
 .lni-arrow-top-left::before {
-	content: $lni-arrow-top-left;
+  content: $lni-arrow-top-left;
 }
 
 .lni-arrow-top-right::before {
-	content: $lni-arrow-top-right;
+  content: $lni-arrow-top-right;
 }
 
 .lni-arrow-up-circle::before {
-	content: $lni-arrow-up-circle;
+  content: $lni-arrow-up-circle;
 }
 
 .lni-arrow-up::before {
-	content: $lni-arrow-up;
+  content: $lni-arrow-up;
 }
 
 .lni-arrows-horizontal::before {
-	content: $lni-arrows-horizontal;
+  content: $lni-arrows-horizontal;
 }
 
 .lni-arrows-vertical::before {
-	content: $lni-arrows-vertical;
+  content: $lni-arrows-vertical;
 }
 
 .lni-atlassian::before {
-	content: $lni-atlassian;
+  content: $lni-atlassian;
 }
 
 .lni-aws::before {
-	content: $lni-aws;
+  content: $lni-aws;
 }
 
 .lni-azure::before {
-	content: $lni-azure;
+  content: $lni-azure;
 }
 
 .lni-backward::before {
-	content: $lni-backward;
+  content: $lni-backward;
 }
 
 .lni-baloon::before {
-	content: $lni-baloon;
+  content: $lni-baloon;
 }
 
 .lni-ban::before {
-	content: $lni-ban;
+  content: $lni-ban;
 }
 
 .lni-bar-chart::before {
-	content: $lni-bar-chart;
+  content: $lni-bar-chart;
 }
 
 .lni-basketball::before {
-	content: $lni-basketball;
+  content: $lni-basketball;
 }
 
 .lni-behance-original::before {
-	content: $lni-behance-original;
+  content: $lni-behance-original;
 }
 
 .lni-behance::before {
-	content: $lni-behance;
+  content: $lni-behance;
 }
 
 .lni-bi-cycle::before {
-	content: $lni-bi-cycle;
+  content: $lni-bi-cycle;
 }
 
 .lni-bitbucket::before {
-	content: $lni-bitbucket;
+  content: $lni-bitbucket;
 }
 
 .lni-bitcoin::before {
-	content: $lni-bitcoin;
+  content: $lni-bitcoin;
 }
 
 .lni-blackboard::before {
-	content: $lni-blackboard;
+  content: $lni-blackboard;
 }
 
 .lni-blogger::before {
-	content: $lni-blogger;
+  content: $lni-blogger;
 }
 
 .lni-bluetooth-original::before {
-	content: $lni-bluetooth-original;
+  content: $lni-bluetooth-original;
 }
 
 .lni-bluetooth::before {
-	content: $lni-bluetooth;
+  content: $lni-bluetooth;
 }
 
 .lni-bold::before {
-	content: $lni-bold;
+  content: $lni-bold;
 }
 
 .lni-bolt-alt::before {
-	content: $lni-bolt-alt;
+  content: $lni-bolt-alt;
 }
 
 .lni-bolt::before {
-	content: $lni-bolt;
+  content: $lni-bolt;
 }
 
 .lni-book::before {
-	content: $lni-book;
+  content: $lni-book;
 }
 
 .lni-bookmark-alt::before {
-	content: $lni-bookmark-alt;
+  content: $lni-bookmark-alt;
 }
 
 .lni-bookmark::before {
-	content: $lni-bookmark;
+  content: $lni-bookmark;
 }
 
 .lni-bootstrap::before {
-	content: $lni-bootstrap;
+  content: $lni-bootstrap;
 }
 
 .lni-bricks::before {
-	content: $lni-bricks;
+  content: $lni-bricks;
 }
 
 .lni-bridge::before {
-	content: $lni-bridge;
+  content: $lni-bridge;
 }
 
 .lni-briefcase::before {
-	content: $lni-briefcase;
+  content: $lni-briefcase;
 }
 
 .lni-brush-alt::before {
-	content: $lni-brush-alt;
+  content: $lni-brush-alt;
 }
 
 .lni-brush::before {
-	content: $lni-brush;
+  content: $lni-brush;
 }
 
 .lni-btc::before {
-	content: $lni-btc;
+  content: $lni-btc;
 }
 
 .lni-bubble::before {
-	content: $lni-bubble;
+  content: $lni-bubble;
 }
 
 .lni-bug::before {
-	content: $lni-bug;
+  content: $lni-bug;
 }
 
 .lni-bulb::before {
-	content: $lni-bulb;
+  content: $lni-bulb;
 }
 
 .lni-bullhorn::before {
-	content: $lni-bullhorn;
+  content: $lni-bullhorn;
 }
 
 .lni-burger::before {
-	content: $lni-burger;
+  content: $lni-burger;
 }
 
 .lni-bus::before {
-	content: $lni-bus;
+  content: $lni-bus;
 }
 
 .lni-cake::before {
-	content: $lni-cake;
+  content: $lni-cake;
 }
 
 .lni-calculator::before {
-	content: $lni-calculator;
+  content: $lni-calculator;
 }
 
 .lni-calendar::before {
-	content: $lni-calendar;
+  content: $lni-calendar;
 }
 
 .lni-camera::before {
-	content: $lni-camera;
+  content: $lni-camera;
 }
 
 .lni-candy-cane::before {
-	content: $lni-candy-cane;
+  content: $lni-candy-cane;
 }
 
 .lni-candy::before {
-	content: $lni-candy;
+  content: $lni-candy;
 }
 
 .lni-capsule::before {
-	content: $lni-capsule;
+  content: $lni-capsule;
 }
 
 .lni-car-alt::before {
-	content: $lni-car-alt;
+  content: $lni-car-alt;
 }
 
 .lni-car::before {
-	content: $lni-car;
+  content: $lni-car;
 }
 
 .lni-caravan::before {
-	content: $lni-caravan;
+  content: $lni-caravan;
 }
 
 .lni-cart-full::before {
-	content: $lni-cart-full;
+  content: $lni-cart-full;
 }
 
 .lni-cart::before {
-	content: $lni-cart;
+  content: $lni-cart;
 }
 
 .lni-certificate::before {
-	content: $lni-certificate;
+  content: $lni-certificate;
 }
 
 .lni-check-box::before {
-	content: $lni-check-box;
+  content: $lni-check-box;
 }
 
 .lni-checkmark-circle::before {
-	content: $lni-checkmark-circle;
+  content: $lni-checkmark-circle;
 }
 
 .lni-checkmark::before {
-	content: $lni-checkmark;
+  content: $lni-checkmark;
 }
 
 .lni-chef-hat::before {
-	content: $lni-chef-hat;
+  content: $lni-chef-hat;
 }
 
 .lni-chevron-down-circle::before {
-	content: $lni-chevron-down-circle;
+  content: $lni-chevron-down-circle;
 }
 
 .lni-chevron-down::before {
-	content: $lni-chevron-down;
+  content: $lni-chevron-down;
 }
 
 .lni-chevron-left-circle::before {
-	content: $lni-chevron-left-circle;
+  content: $lni-chevron-left-circle;
 }
 
 .lni-chevron-left::before {
-	content: $lni-chevron-left;
+  content: $lni-chevron-left;
 }
 
 .lni-chevron-right-circle::before {
-	content: $lni-chevron-right-circle;
+  content: $lni-chevron-right-circle;
 }
 
 .lni-chevron-right::before {
-	content: $lni-chevron-right;
+  content: $lni-chevron-right;
 }
 
 .lni-chevron-up-circle::before {
-	content: $lni-chevron-up-circle;
+  content: $lni-chevron-up-circle;
 }
 
 .lni-chevron-up::before {
-	content: $lni-chevron-up;
+  content: $lni-chevron-up;
 }
 
 .lni-chrome::before {
-	content: $lni-chrome;
+  content: $lni-chrome;
 }
 
 .lni-chromecast::before {
-	content: $lni-chromecast;
+  content: $lni-chromecast;
 }
 
 .lni-circle-minus::before {
-	content: $lni-circle-minus;
+  content: $lni-circle-minus;
 }
 
 .lni-circle-plus::before {
-	content: $lni-circle-plus;
+  content: $lni-circle-plus;
 }
 
 .lni-clipboard::before {
-	content: $lni-clipboard;
+  content: $lni-clipboard;
 }
 
 .lni-close::before {
-	content: $lni-close;
+  content: $lni-close;
 }
 
 .lni-cloud-check::before {
-	content: $lni-cloud-check;
+  content: $lni-cloud-check;
 }
 
 .lni-cloud-download::before {
-	content: $lni-cloud-download;
+  content: $lni-cloud-download;
 }
 
 .lni-cloud-network::before {
-	content: $lni-cloud-network;
+  content: $lni-cloud-network;
 }
 
 .lni-cloud-sync::before {
-	content: $lni-cloud-sync;
+  content: $lni-cloud-sync;
 }
 
 .lni-cloud-upload::before {
-	content: $lni-cloud-upload;
+  content: $lni-cloud-upload;
 }
 
 .lni-cloud::before {
-	content: $lni-cloud;
+  content: $lni-cloud;
 }
 
 .lni-cloudflare::before {
-	content: $lni-cloudflare;
+  content: $lni-cloudflare;
 }
 
 .lni-cloudy-sun::before {
-	content: $lni-cloudy-sun;
+  content: $lni-cloudy-sun;
 }
 
 .lni-code-alt::before {
-	content: $lni-code-alt;
+  content: $lni-code-alt;
 }
 
 .lni-code::before {
-	content: $lni-code;
+  content: $lni-code;
 }
 
 .lni-codepen::before {
-	content: $lni-codepen;
+  content: $lni-codepen;
 }
 
 .lni-coffee-cup::before {
-	content: $lni-coffee-cup;
+  content: $lni-coffee-cup;
 }
 
 .lni-cog::before {
-	content: $lni-cog;
+  content: $lni-cog;
 }
 
 .lni-cogs::before {
-	content: $lni-cogs;
+  content: $lni-cogs;
 }
 
 .lni-coin::before {
-	content: $lni-coin;
+  content: $lni-coin;
 }
 
 .lni-comments-alt::before {
-	content: $lni-comments-alt;
+  content: $lni-comments-alt;
 }
 
 .lni-comments-reply::before {
-	content: $lni-comments-reply;
+  content: $lni-comments-reply;
 }
 
 .lni-comments::before {
-	content: $lni-comments;
+  content: $lni-comments;
 }
 
 .lni-compass::before {
-	content: $lni-compass;
+  content: $lni-compass;
 }
 
 .lni-connectdevelop::before {
-	content: $lni-connectdevelop;
+  content: $lni-connectdevelop;
 }
 
 .lni-construction-hammer::before {
-	content: $lni-construction-hammer;
+  content: $lni-construction-hammer;
 }
 
 .lni-construction::before {
-	content: $lni-construction;
+  content: $lni-construction;
 }
 
 .lni-consulting::before {
-	content: $lni-consulting;
+  content: $lni-consulting;
 }
 
 .lni-control-panel::before {
-	content: $lni-control-panel;
+  content: $lni-control-panel;
 }
 
 .lni-cool::before {
-	content: $lni-cool;
+  content: $lni-cool;
 }
 
 .lni-cpanel::before {
-	content: $lni-cpanel;
+  content: $lni-cpanel;
 }
 
 .lni-creative-commons::before {
-	content: $lni-creative-commons;
+  content: $lni-creative-commons;
 }
 
 .lni-credit-cards::before {
-	content: $lni-credit-cards;
+  content: $lni-credit-cards;
 }
 
 .lni-crop::before {
-	content: $lni-crop;
+  content: $lni-crop;
 }
 
 .lni-cross-circle::before {
-	content: $lni-cross-circle;
+  content: $lni-cross-circle;
 }
 
 .lni-crown::before {
-	content: $lni-crown;
+  content: $lni-crown;
 }
 
 .lni-css3::before {
-	content: $lni-css3;
+  content: $lni-css3;
 }
 
 .lni-cup::before {
-	content: $lni-cup;
+  content: $lni-cup;
 }
 
 .lni-customer::before {
-	content: $lni-customer;
+  content: $lni-customer;
 }
 
 .lni-cut::before {
-	content: $lni-cut;
+  content: $lni-cut;
 }
 
 .lni-dashboard::before {
-	content: $lni-dashboard;
+  content: $lni-dashboard;
 }
 
 .lni-database::before {
-	content: $lni-database;
+  content: $lni-database;
 }
 
 .lni-delivery::before {
-	content: $lni-delivery;
+  content: $lni-delivery;
 }
 
 .lni-dev::before {
-	content: $lni-dev;
+  content: $lni-dev;
 }
 
 .lni-diamond-alt::before {
-	content: $lni-diamond-alt;
+  content: $lni-diamond-alt;
 }
 
 .lni-diamond::before {
-	content: $lni-diamond;
+  content: $lni-diamond;
 }
 
 .lni-digitalocean::before {
-	content: $lni-digitalocean;
+  content: $lni-digitalocean;
 }
 
 .lni-diners-club::before {
-	content: $lni-diners-club;
+  content: $lni-diners-club;
 }
 
 .lni-dinner::before {
-	content: $lni-dinner;
+  content: $lni-dinner;
 }
 
 .lni-direction-alt::before {
-	content: $lni-direction-alt;
+  content: $lni-direction-alt;
 }
 
 .lni-direction-ltr::before {
-	content: $lni-direction-ltr;
+  content: $lni-direction-ltr;
 }
 
 .lni-direction-rtl::before {
-	content: $lni-direction-rtl;
+  content: $lni-direction-rtl;
 }
 
 .lni-direction::before {
-	content: $lni-direction;
+  content: $lni-direction;
 }
 
 .lni-discord::before {
-	content: $lni-discord;
+  content: $lni-discord;
 }
 
 .lni-discover::before {
-	content: $lni-discover;
+  content: $lni-discover;
 }
 
 .lni-display-alt::before {
-	content: $lni-display-alt;
+  content: $lni-display-alt;
 }
 
 .lni-display::before {
-	content: $lni-display;
+  content: $lni-display;
 }
 
 .lni-docker::before {
-	content: $lni-docker;
+  content: $lni-docker;
 }
 
 .lni-dollar::before {
-	content: $lni-dollar;
+  content: $lni-dollar;
 }
 
 .lni-domain::before {
-	content: $lni-domain;
+  content: $lni-domain;
 }
 
 .lni-download::before {
-	content: $lni-download;
+  content: $lni-download;
 }
 
 .lni-dribbble::before {
-	content: $lni-dribbble;
+  content: $lni-dribbble;
 }
 
 .lni-drop::before {
-	content: $lni-drop;
+  content: $lni-drop;
 }
 
 .lni-dropbox-original::before {
-	content: $lni-dropbox-original;
+  content: $lni-dropbox-original;
 }
 
 .lni-dropbox::before {
-	content: $lni-dropbox;
+  content: $lni-dropbox;
 }
 
 .lni-drupal-original::before {
-	content: $lni-drupal-original;
+  content: $lni-drupal-original;
 }
 
 .lni-drupal::before {
-	content: $lni-drupal;
+  content: $lni-drupal;
 }
 
 .lni-dumbbell::before {
-	content: $lni-dumbbell;
+  content: $lni-dumbbell;
 }
 
 .lni-edge::before {
-	content: $lni-edge;
+  content: $lni-edge;
 }
 
 .lni-empty-file::before {
-	content: $lni-empty-file;
+  content: $lni-empty-file;
 }
 
 .lni-enter::before {
-	content: $lni-enter;
+  content: $lni-enter;
 }
 
 .lni-envato::before {
-	content: $lni-envato;
+  content: $lni-envato;
 }
 
 .lni-envelope::before {
-	content: $lni-envelope;
+  content: $lni-envelope;
 }
 
 .lni-eraser::before {
-	content: $lni-eraser;
+  content: $lni-eraser;
 }
 
 .lni-euro::before {
-	content: $lni-euro;
+  content: $lni-euro;
 }
 
 .lni-exit-down::before {
-	content: $lni-exit-down;
+  content: $lni-exit-down;
 }
 
 .lni-exit-up::before {
-	content: $lni-exit-up;
+  content: $lni-exit-up;
 }
 
 .lni-exit::before {
-	content: $lni-exit;
+  content: $lni-exit;
 }
 
 .lni-eye::before {
-	content: $lni-eye;
+  content: $lni-eye;
 }
 
 .lni-facebook-filled::before {
-	content: $lni-facebook-filled;
+  content: $lni-facebook-filled;
 }
 
 .lni-facebook-messenger::before {
-	content: $lni-facebook-messenger;
+  content: $lni-facebook-messenger;
 }
 
 .lni-facebook-original::before {
-	content: $lni-facebook-original;
+  content: $lni-facebook-original;
 }
 
 .lni-facebook-oval::before {
-	content: $lni-facebook-oval;
+  content: $lni-facebook-oval;
 }
 
 .lni-facebook::before {
-	content: $lni-facebook;
+  content: $lni-facebook;
 }
 
 .lni-figma::before {
-	content: $lni-figma;
+  content: $lni-figma;
 }
 
 .lni-files::before {
-	content: $lni-files;
+  content: $lni-files;
 }
 
 .lni-firefox-original::before {
-	content: $lni-firefox-original;
+  content: $lni-firefox-original;
 }
 
 .lni-firefox::before {
-	content: $lni-firefox;
+  content: $lni-firefox;
 }
 
 .lni-fireworks::before {
-	content: $lni-fireworks;
+  content: $lni-fireworks;
 }
 
 .lni-first-aid::before {
-	content: $lni-first-aid;
+  content: $lni-first-aid;
 }
 
 .lni-flag-alt::before {
-	content: $lni-flag-alt;
+  content: $lni-flag-alt;
 }
 
 .lni-flag::before {
-	content: $lni-flag;
+  content: $lni-flag;
 }
 
 .lni-flags::before {
-	content: $lni-flags;
+  content: $lni-flags;
 }
 
 .lni-flickr::before {
-	content: $lni-flickr;
+  content: $lni-flickr;
 }
 
 .lni-flower::before {
-	content: $lni-flower;
+  content: $lni-flower;
 }
 
 .lni-folder::before {
-	content: $lni-folder;
+  content: $lni-folder;
 }
 
 .lni-forward::before {
-	content: $lni-forward;
+  content: $lni-forward;
 }
 
 .lni-frame-expand::before {
-	content: $lni-frame-expand;
+  content: $lni-frame-expand;
 }
 
 .lni-fresh-juice::before {
-	content: $lni-fresh-juice;
+  content: $lni-fresh-juice;
 }
 
 .lni-friendly::before {
-	content: $lni-friendly;
+  content: $lni-friendly;
 }
 
 .lni-full-screen::before {
-	content: $lni-full-screen;
+  content: $lni-full-screen;
 }
 
 .lni-funnel::before {
-	content: $lni-funnel;
+  content: $lni-funnel;
 }
 
 .lni-gallery::before {
-	content: $lni-gallery;
+  content: $lni-gallery;
 }
 
 .lni-game::before {
-	content: $lni-game;
+  content: $lni-game;
 }
 
 .lni-gatsby::before {
-	content: $lni-gatsby;
+  content: $lni-gatsby;
 }
 
 .lni-gift::before {
-	content: $lni-gift;
+  content: $lni-gift;
 }
 
 .lni-git::before {
-	content: $lni-git;
+  content: $lni-git;
 }
 
 .lni-github-original::before {
-	content: $lni-github-original;
+  content: $lni-github-original;
 }
 
 .lni-github::before {
-	content: $lni-github;
+  content: $lni-github;
 }
 
 .lni-goodreads::before {
-	content: $lni-goodreads;
+  content: $lni-goodreads;
 }
 
 .lni-google-drive::before {
-	content: $lni-google-drive;
+  content: $lni-google-drive;
 }
 
 .lni-google-pay::before {
-	content: $lni-google-pay;
+  content: $lni-google-pay;
 }
 
 .lni-google-wallet::before {
-	content: $lni-google-wallet;
+  content: $lni-google-wallet;
 }
 
 .lni-google::before {
-	content: $lni-google;
+  content: $lni-google;
 }
 
 .lni-graduation::before {
-	content: $lni-graduation;
+  content: $lni-graduation;
 }
 
 .lni-graph::before {
-	content: $lni-graph;
+  content: $lni-graph;
 }
 
 .lni-grid-alt::before {
-	content: $lni-grid-alt;
+  content: $lni-grid-alt;
 }
 
 .lni-grid::before {
-	content: $lni-grid;
+  content: $lni-grid;
 }
 
 .lni-grow::before {
-	content: $lni-grow;
+  content: $lni-grow;
 }
 
 .lni-hacker-news::before {
-	content: $lni-hacker-news;
+  content: $lni-hacker-news;
 }
 
 .lni-hammer::before {
-	content: $lni-hammer;
+  content: $lni-hammer;
 }
 
 .lni-hand::before {
-	content: $lni-hand;
+  content: $lni-hand;
 }
 
 .lni-handshake::before {
-	content: $lni-handshake;
+  content: $lni-handshake;
 }
 
 .lni-happy::before {
-	content: $lni-happy;
+  content: $lni-happy;
 }
 
 .lni-harddrive::before {
-	content: $lni-harddrive;
+  content: $lni-harddrive;
 }
 
 .lni-headphone-alt::before {
-	content: $lni-headphone-alt;
+  content: $lni-headphone-alt;
 }
 
 .lni-headphone::before {
-	content: $lni-headphone;
+  content: $lni-headphone;
 }
 
 .lni-heart-filled::before {
-	content: $lni-heart-filled;
+  content: $lni-heart-filled;
 }
 
 .lni-heart-monitor::before {
-	content: $lni-heart-monitor;
+  content: $lni-heart-monitor;
 }
 
 .lni-heart::before {
-	content: $lni-heart;
+  content: $lni-heart;
 }
 
 .lni-helicopter::before {
-	content: $lni-helicopter;
+  content: $lni-helicopter;
 }
 
 .lni-helmet::before {
-	content: $lni-helmet;
+  content: $lni-helmet;
 }
 
 .lni-help::before {
-	content: $lni-help;
+  content: $lni-help;
 }
 
 .lni-highlight-alt::before {
-	content: $lni-highlight-alt;
+  content: $lni-highlight-alt;
 }
 
 .lni-highlight::before {
-	content: $lni-highlight;
+  content: $lni-highlight;
 }
 
 .lni-home::before {
-	content: $lni-home;
+  content: $lni-home;
 }
 
 .lni-hospital::before {
-	content: $lni-hospital;
+  content: $lni-hospital;
 }
 
 .lni-hourglass::before {
-	content: $lni-hourglass;
+  content: $lni-hourglass;
 }
 
 .lni-html5::before {
-	content: $lni-html5;
+  content: $lni-html5;
 }
 
 .lni-image::before {
-	content: $lni-image;
+  content: $lni-image;
 }
 
 .lni-imdb::before {
-	content: $lni-imdb;
+  content: $lni-imdb;
 }
 
 .lni-inbox::before {
-	content: $lni-inbox;
+  content: $lni-inbox;
 }
 
 .lni-indent-decrease::before {
-	content: $lni-indent-decrease;
+  content: $lni-indent-decrease;
 }
 
 .lni-indent-increase::before {
-	content: $lni-indent-increase;
+  content: $lni-indent-increase;
 }
 
 .lni-infinite::before {
-	content: $lni-infinite;
+  content: $lni-infinite;
 }
 
 .lni-information::before {
-	content: $lni-information;
+  content: $lni-information;
 }
 
 .lni-instagram-filled::before {
-	content: $lni-instagram-filled;
+  content: $lni-instagram-filled;
 }
 
 .lni-instagram-original::before {
-	content: $lni-instagram-original;
+  content: $lni-instagram-original;
 }
 
 .lni-instagram::before {
-	content: $lni-instagram;
+  content: $lni-instagram;
 }
 
 .lni-invention::before {
-	content: $lni-invention;
+  content: $lni-invention;
 }
 
 .lni-invest-monitor::before {
-	content: $lni-invest-monitor;
+  content: $lni-invest-monitor;
 }
 
 .lni-investment::before {
-	content: $lni-investment;
+  content: $lni-investment;
 }
 
 .lni-island::before {
-	content: $lni-island;
+  content: $lni-island;
 }
 
 .lni-italic::before {
-	content: $lni-italic;
+  content: $lni-italic;
 }
 
 .lni-java::before {
-	content: $lni-java;
+  content: $lni-java;
 }
 
 .lni-javascript::before {
-	content: $lni-javascript;
+  content: $lni-javascript;
 }
 
 .lni-jcb::before {
-	content: $lni-jcb;
+  content: $lni-jcb;
 }
 
 .lni-joomla-original::before {
-	content: $lni-joomla-original;
+  content: $lni-joomla-original;
 }
 
 .lni-joomla::before {
-	content: $lni-joomla;
+  content: $lni-joomla;
 }
 
 .lni-jsfiddle::before {
-	content: $lni-jsfiddle;
+  content: $lni-jsfiddle;
 }
 
 .lni-juice::before {
-	content: $lni-juice;
+  content: $lni-juice;
 }
 
 .lni-key::before {
-	content: $lni-key;
+  content: $lni-key;
 }
 
 .lni-keyboard::before {
-	content: $lni-keyboard;
+  content: $lni-keyboard;
 }
 
 .lni-keyword-research::before {
-	content: $lni-keyword-research;
+  content: $lni-keyword-research;
 }
 
 .lni-laptop-phone::before {
-	content: $lni-laptop-phone;
+  content: $lni-laptop-phone;
 }
 
 .lni-laptop::before {
-	content: $lni-laptop;
+  content: $lni-laptop;
 }
 
 .lni-laravel::before {
-	content: $lni-laravel;
+  content: $lni-laravel;
 }
 
 .lni-layers::before {
-	content: $lni-layers;
+  content: $lni-layers;
 }
 
 .lni-layout::before {
-	content: $lni-layout;
+  content: $lni-layout;
 }
 
 .lni-leaf::before {
-	content: $lni-leaf;
+  content: $lni-leaf;
 }
 
 .lni-library::before {
-	content: $lni-library;
+  content: $lni-library;
 }
 
 .lni-license::before {
-	content: $lni-license;
+  content: $lni-license;
 }
 
 .lni-lifering::before {
-	content: $lni-lifering;
+  content: $lni-lifering;
 }
 
 .lni-line-dashed::before {
-	content: $lni-line-dashed;
+  content: $lni-line-dashed;
 }
 
 .lni-line-dotted::before {
-	content: $lni-line-dotted;
+  content: $lni-line-dotted;
 }
 
 .lni-line-double::before {
-	content: $lni-line-double;
+  content: $lni-line-double;
 }
 
 .lni-line-spacing::before {
-	content: $lni-line-spacing;
+  content: $lni-line-spacing;
 }
 
 .lni-line::before {
-	content: $lni-line;
+  content: $lni-line;
 }
 
 .lni-lineicons-alt::before {
-	content: $lni-lineicons-alt;
+  content: $lni-lineicons-alt;
 }
 
 .lni-lineicons::before {
-	content: $lni-lineicons;
+  content: $lni-lineicons;
 }
 
 .lni-link::before {
-	content: $lni-link;
+  content: $lni-link;
 }
 
 .lni-linkedin-original::before {
-	content: $lni-linkedin-original;
+  content: $lni-linkedin-original;
 }
 
 .lni-linkedin::before {
-	content: $lni-linkedin;
+  content: $lni-linkedin;
 }
 
 .lni-list::before {
-	content: $lni-list;
+  content: $lni-list;
 }
 
 .lni-lock-alt::before {
-	content: $lni-lock-alt;
+  content: $lni-lock-alt;
 }
 
 .lni-lock::before {
-	content: $lni-lock;
+  content: $lni-lock;
 }
 
 .lni-magento::before {
-	content: $lni-magento;
+  content: $lni-magento;
 }
 
 .lni-magnet::before {
-	content: $lni-magnet;
+  content: $lni-magnet;
 }
 
 .lni-magnifier::before {
-	content: $lni-magnifier;
+  content: $lni-magnifier;
 }
 
 .lni-mailchimp::before {
-	content: $lni-mailchimp;
+  content: $lni-mailchimp;
 }
 
 .lni-map-marker::before {
-	content: $lni-map-marker;
+  content: $lni-map-marker;
 }
 
 .lni-map::before {
-	content: $lni-map;
+  content: $lni-map;
 }
 
 .lni-markdown::before {
-	content: $lni-markdown;
+  content: $lni-markdown;
 }
 
 .lni-mashroom::before {
-	content: $lni-mashroom;
+  content: $lni-mashroom;
 }
 
 .lni-mastercard::before {
-	content: $lni-mastercard;
+  content: $lni-mastercard;
 }
 
 .lni-medium::before {
-	content: $lni-medium;
+  content: $lni-medium;
 }
 
 .lni-menu::before {
-	content: $lni-menu;
+  content: $lni-menu;
 }
 
 .lni-mic::before {
-	content: $lni-mic;
+  content: $lni-mic;
 }
 
 .lni-microphone::before {
-	content: $lni-microphone;
+  content: $lni-microphone;
 }
 
 .lni-microscope::before {
-	content: $lni-microscope;
+  content: $lni-microscope;
 }
 
 .lni-microsoft-edge::before {
-	content: $lni-microsoft-edge;
+  content: $lni-microsoft-edge;
 }
 
 .lni-microsoft::before {
-	content: $lni-microsoft;
+  content: $lni-microsoft;
 }
 
 .lni-minus::before {
-	content: $lni-minus;
+  content: $lni-minus;
 }
 
 .lni-mobile::before {
-	content: $lni-mobile;
+  content: $lni-mobile;
 }
 
 .lni-money-location::before {
-	content: $lni-money-location;
+  content: $lni-money-location;
 }
 
 .lni-money-protection::before {
-	content: $lni-money-protection;
+  content: $lni-money-protection;
 }
 
 .lni-more-alt::before {
-	content: $lni-more-alt;
+  content: $lni-more-alt;
 }
 
 .lni-more::before {
-	content: $lni-more;
+  content: $lni-more;
 }
 
 .lni-mouse::before {
-	content: $lni-mouse;
+  content: $lni-mouse;
 }
 
 .lni-move::before {
-	content: $lni-move;
+  content: $lni-move;
 }
 
 .lni-music::before {
-	content: $lni-music;
+  content: $lni-music;
 }
 
 .lni-netlify::before {
-	content: $lni-netlify;
+  content: $lni-netlify;
 }
 
 .lni-network::before {
-	content: $lni-network;
+  content: $lni-network;
 }
 
 .lni-night::before {
-	content: $lni-night;
+  content: $lni-night;
 }
 
 .lni-nodejs-alt::before {
-	content: $lni-nodejs-alt;
+  content: $lni-nodejs-alt;
 }
 
 .lni-nodejs::before {
-	content: $lni-nodejs;
+  content: $lni-nodejs;
 }
 
 .lni-notepad::before {
-	content: $lni-notepad;
+  content: $lni-notepad;
 }
 
 .lni-npm::before {
-	content: $lni-npm;
+  content: $lni-npm;
 }
 
 .lni-offer::before {
-	content: $lni-offer;
+  content: $lni-offer;
 }
 
 .lni-opera::before {
-	content: $lni-opera;
+  content: $lni-opera;
 }
 
 .lni-package::before {
-	content: $lni-package;
+  content: $lni-package;
 }
 
 .lni-page-break::before {
-	content: $lni-page-break;
+  content: $lni-page-break;
 }
 
 .lni-pagination::before {
-	content: $lni-pagination;
+  content: $lni-pagination;
 }
 
 .lni-paint-bucket::before {
-	content: $lni-paint-bucket;
+  content: $lni-paint-bucket;
 }
 
 .lni-paint-roller::before {
-	content: $lni-paint-roller;
+  content: $lni-paint-roller;
 }
 
 .lni-pallet::before {
-	content: $lni-pallet;
+  content: $lni-pallet;
 }
 
 .lni-paperclip::before {
-	content: $lni-paperclip;
+  content: $lni-paperclip;
 }
 
 .lni-patreon::before {
-	content: $lni-patreon;
+  content: $lni-patreon;
 }
 
 .lni-pause::before {
-	content: $lni-pause;
+  content: $lni-pause;
 }
 
 .lni-paypal-original::before {
-	content: $lni-paypal-original;
+  content: $lni-paypal-original;
 }
 
 .lni-paypal::before {
-	content: $lni-paypal;
+  content: $lni-paypal;
 }
 
 .lni-pencil-alt::before {
-	content: $lni-pencil-alt;
+  content: $lni-pencil-alt;
 }
 
 .lni-pencil::before {
-	content: $lni-pencil;
+  content: $lni-pencil;
 }
 
 .lni-phone-set::before {
-	content: $lni-phone-set;
+  content: $lni-phone-set;
 }
 
 .lni-phone::before {
-	content: $lni-phone;
+  content: $lni-phone;
 }
 
 .lni-php::before {
-	content: $lni-php;
+  content: $lni-php;
 }
 
 .lni-pie-chart::before {
-	content: $lni-pie-chart;
+  content: $lni-pie-chart;
 }
 
 .lni-pilcrow::before {
-	content: $lni-pilcrow;
+  content: $lni-pilcrow;
 }
 
 .lni-pin::before {
-	content: $lni-pin;
+  content: $lni-pin;
 }
 
 .lni-pinterest::before {
-	content: $lni-pinterest;
+  content: $lni-pinterest;
 }
 
 .lni-pizza::before {
-	content: $lni-pizza;
+  content: $lni-pizza;
 }
 
 .lni-plane::before {
-	content: $lni-plane;
+  content: $lni-plane;
 }
 
 .lni-play-store::before {
-	content: $lni-play-store;
+  content: $lni-play-store;
 }
 
 .lni-play::before {
-	content: $lni-play;
+  content: $lni-play;
 }
 
 .lni-playstation::before {
-	content: $lni-playstation;
+  content: $lni-playstation;
 }
 
 .lni-plug::before {
-	content: $lni-plug;
+  content: $lni-plug;
 }
 
 .lni-plus::before {
-	content: $lni-plus;
+  content: $lni-plus;
 }
 
 .lni-pointer-down::before {
-	content: $lni-pointer-down;
+  content: $lni-pointer-down;
 }
 
 .lni-pointer-left::before {
-	content: $lni-pointer-left;
+  content: $lni-pointer-left;
 }
 
 .lni-pointer-right::before {
-	content: $lni-pointer-right;
+  content: $lni-pointer-right;
 }
 
 .lni-pointer-top::before {
-	content: $lni-pointer-top;
+  content: $lni-pointer-top;
 }
 
 .lni-pointer::before {
-	content: $lni-pointer;
+  content: $lni-pointer;
 }
 
 .lni-popup::before {
-	content: $lni-popup;
+  content: $lni-popup;
 }
 
 .lni-postcard::before {
-	content: $lni-postcard;
+  content: $lni-postcard;
 }
 
 .lni-pound::before {
-	content: $lni-pound;
+  content: $lni-pound;
 }
 
 .lni-power-switch::before {
-	content: $lni-power-switch;
+  content: $lni-power-switch;
 }
 
 .lni-printer::before {
-	content: $lni-printer;
+  content: $lni-printer;
 }
 
 .lni-producthunt::before {
-	content: $lni-producthunt;
+  content: $lni-producthunt;
 }
 
 .lni-protection::before {
-	content: $lni-protection;
+  content: $lni-protection;
 }
 
 .lni-pulse::before {
-	content: $lni-pulse;
+  content: $lni-pulse;
 }
 
 .lni-pyramids::before {
-	content: $lni-pyramids;
+  content: $lni-pyramids;
 }
 
 .lni-python::before {
-	content: $lni-python;
+  content: $lni-python;
 }
 
 .lni-question-circle::before {
-	content: $lni-question-circle;
+  content: $lni-question-circle;
 }
 
 .lni-quora::before {
-	content: $lni-quora;
+  content: $lni-quora;
 }
 
 .lni-quotation::before {
-	content: $lni-quotation;
+  content: $lni-quotation;
 }
 
 .lni-radio-button::before {
-	content: $lni-radio-button;
+  content: $lni-radio-button;
 }
 
 .lni-rain::before {
-	content: $lni-rain;
+  content: $lni-rain;
 }
 
 .lni-react::before {
-	content: $lni-react;
+  content: $lni-react;
 }
 
 .lni-reddit::before {
-	content: $lni-reddit;
+  content: $lni-reddit;
 }
 
 .lni-reload::before {
-	content: $lni-reload;
+  content: $lni-reload;
 }
 
 .lni-remove-file::before {
-	content: $lni-remove-file;
+  content: $lni-remove-file;
 }
 
 .lni-reply::before {
-	content: $lni-reply;
+  content: $lni-reply;
 }
 
 .lni-restaurant::before {
-	content: $lni-restaurant;
+  content: $lni-restaurant;
 }
 
 .lni-revenue::before {
-	content: $lni-revenue;
+  content: $lni-revenue;
 }
 
 .lni-road::before {
-	content: $lni-road;
+  content: $lni-road;
 }
 
 .lni-rocket::before {
-	content: $lni-rocket;
+  content: $lni-rocket;
 }
 
 .lni-rss-feed::before {
-	content: $lni-rss-feed;
+  content: $lni-rss-feed;
 }
 
 .lni-ruler-alt::before {
-	content: $lni-ruler-alt;
+  content: $lni-ruler-alt;
 }
 
 .lni-ruler-pencil::before {
-	content: $lni-ruler-pencil;
+  content: $lni-ruler-pencil;
 }
 
 .lni-ruler::before {
-	content: $lni-ruler;
+  content: $lni-ruler;
 }
 
 .lni-rupee::before {
-	content: $lni-rupee;
+  content: $lni-rupee;
 }
 
 .lni-sad::before {
-	content: $lni-sad;
+  content: $lni-sad;
 }
 
 .lni-save::before {
-	content: $lni-save;
+  content: $lni-save;
 }
 
 .lni-school-bench-alt::before {
-	content: $lni-school-bench-alt;
+  content: $lni-school-bench-alt;
 }
 
 .lni-school-bench::before {
-	content: $lni-school-bench;
+  content: $lni-school-bench;
 }
 
 .lni-scooter::before {
-	content: $lni-scooter;
+  content: $lni-scooter;
 }
 
 .lni-scroll-down::before {
-	content: $lni-scroll-down;
+  content: $lni-scroll-down;
 }
 
 .lni-search-alt::before {
-	content: $lni-search-alt;
+  content: $lni-search-alt;
 }
 
 .lni-search::before {
-	content: $lni-search;
+  content: $lni-search;
 }
 
 .lni-select::before {
-	content: $lni-select;
+  content: $lni-select;
 }
 
 .lni-seo::before {
-	content: $lni-seo;
+  content: $lni-seo;
 }
 
 .lni-service::before {
-	content: $lni-service;
+  content: $lni-service;
 }
 
 .lni-share-alt-1::before {
-	content: $lni-share-alt-1;
+  content: $lni-share-alt-1;
 }
 
 .lni-share-alt::before {
-	content: $lni-share-alt;
+  content: $lni-share-alt;
 }
 
 .lni-share::before {
-	content: $lni-share;
+  content: $lni-share;
 }
 
 .lni-shield::before {
-	content: $lni-shield;
+  content: $lni-shield;
 }
 
 .lni-shift-left::before {
-	content: $lni-shift-left;
+  content: $lni-shift-left;
 }
 
 .lni-shift-right::before {
-	content: $lni-shift-right;
+  content: $lni-shift-right;
 }
 
 .lni-ship::before {
-	content: $lni-ship;
+  content: $lni-ship;
 }
 
 .lni-shopify::before {
-	content: $lni-shopify;
+  content: $lni-shopify;
 }
 
 .lni-shopping-basket::before {
-	content: $lni-shopping-basket;
+  content: $lni-shopping-basket;
 }
 
 .lni-shortcode::before {
-	content: $lni-shortcode;
+  content: $lni-shortcode;
 }
 
 .lni-shovel::before {
-	content: $lni-shovel;
+  content: $lni-shovel;
 }
 
 .lni-shuffle::before {
-	content: $lni-shuffle;
+  content: $lni-shuffle;
 }
 
 .lni-signal::before {
-	content: $lni-signal;
+  content: $lni-signal;
 }
 
 .lni-sketch::before {
-	content: $lni-sketch;
+  content: $lni-sketch;
 }
 
 .lni-skipping-rope::before {
-	content: $lni-skipping-rope;
+  content: $lni-skipping-rope;
 }
 
 .lni-skype::before {
-	content: $lni-skype;
+  content: $lni-skype;
 }
 
 .lni-slack-line::before {
-	content: $lni-slack-line;
+  content: $lni-slack-line;
 }
 
 .lni-slack::before {
-	content: $lni-slack;
+  content: $lni-slack;
 }
 
 .lni-slice::before {
-	content: $lni-slice;
+  content: $lni-slice;
 }
 
 .lni-slideshare::before {
-	content: $lni-slideshare;
+  content: $lni-slideshare;
 }
 
 .lni-slim::before {
-	content: $lni-slim;
+  content: $lni-slim;
 }
 
 .lni-smile::before {
-	content: $lni-smile;
+  content: $lni-smile;
 }
 
 .lni-snapchat::before {
-	content: $lni-snapchat;
+  content: $lni-snapchat;
 }
 
 .lni-sort-alpha-asc::before {
-	content: $lni-sort-alpha-asc;
+  content: $lni-sort-alpha-asc;
 }
 
 .lni-sort-amount-asc::before {
-	content: $lni-sort-amount-asc;
+  content: $lni-sort-amount-asc;
 }
 
 .lni-sort-amount-dsc::before {
-	content: $lni-sort-amount-dsc;
+  content: $lni-sort-amount-dsc;
 }
 
 .lni-soundcloud-original::before {
-	content: $lni-soundcloud-original;
+  content: $lni-soundcloud-original;
 }
 
 .lni-soundcloud::before {
-	content: $lni-soundcloud;
+  content: $lni-soundcloud;
 }
 
 .lni-speechless::before {
-	content: $lni-speechless;
+  content: $lni-speechless;
 }
 
 .lni-spellcheck::before {
-	content: $lni-spellcheck;
+  content: $lni-spellcheck;
 }
 
 .lni-spinner-arrow::before {
-	content: $lni-spinner-arrow;
+  content: $lni-spinner-arrow;
 }
 
 .lni-spinner-solid::before {
-	content: $lni-spinner-solid;
+  content: $lni-spinner-solid;
 }
 
 .lni-spinner::before {
-	content: $lni-spinner;
+  content: $lni-spinner;
 }
 
 .lni-spotify-original::before {
-	content: $lni-spotify-original;
+  content: $lni-spotify-original;
 }
 
 .lni-spotify::before {
-	content: $lni-spotify;
+  content: $lni-spotify;
 }
 
 .lni-spray::before {
-	content: $lni-spray;
+  content: $lni-spray;
 }
 
 .lni-sprout::before {
-	content: $lni-sprout;
+  content: $lni-sprout;
 }
 
 .lni-squarespace::before {
-	content: $lni-squarespace;
+  content: $lni-squarespace;
 }
 
 .lni-stackoverflow::before {
-	content: $lni-stackoverflow;
+  content: $lni-stackoverflow;
 }
 
 .lni-stamp::before {
-	content: $lni-stamp;
+  content: $lni-stamp;
 }
 
 .lni-star-empty::before {
-	content: $lni-star-empty;
+  content: $lni-star-empty;
 }
 
 .lni-star-filled::before {
-	content: $lni-star-filled;
+  content: $lni-star-filled;
 }
 
 .lni-star-half::before {
-	content: $lni-star-half;
+  content: $lni-star-half;
 }
 
 .lni-star::before {
-	content: $lni-star;
+  content: $lni-star;
 }
 
 .lni-stats-down::before {
-	content: $lni-stats-down;
+  content: $lni-stats-down;
 }
 
 .lni-stats-up::before {
-	content: $lni-stats-up;
+  content: $lni-stats-up;
 }
 
 .lni-steam::before {
-	content: $lni-steam;
+  content: $lni-steam;
 }
 
 .lni-sthethoscope::before {
-	content: $lni-sthethoscope;
+  content: $lni-sthethoscope;
 }
 
 .lni-stop::before {
-	content: $lni-stop;
+  content: $lni-stop;
 }
 
 .lni-strikethrough::before {
-	content: $lni-strikethrough;
+  content: $lni-strikethrough;
 }
 
 .lni-stripe::before {
-	content: $lni-stripe;
+  content: $lni-stripe;
 }
 
 .lni-stumbleupon::before {
-	content: $lni-stumbleupon;
+  content: $lni-stumbleupon;
 }
 
 .lni-sun::before {
-	content: $lni-sun;
+  content: $lni-sun;
 }
 
 .lni-support::before {
-	content: $lni-support;
+  content: $lni-support;
 }
 
 .lni-surf-board::before {
-	content: $lni-surf-board;
+  content: $lni-surf-board;
 }
 
 .lni-suspect::before {
-	content: $lni-suspect;
+  content: $lni-suspect;
 }
 
 .lni-swift::before {
-	content: $lni-swift;
+  content: $lni-swift;
 }
 
 .lni-syringe::before {
-	content: $lni-syringe;
+  content: $lni-syringe;
 }
 
 .lni-tab::before {
-	content: $lni-tab;
+  content: $lni-tab;
 }
 
 .lni-tag::before {
-	content: $lni-tag;
+  content: $lni-tag;
 }
 
 .lni-target-customer::before {
-	content: $lni-target-customer;
+  content: $lni-target-customer;
 }
 
 .lni-target-revenue::before {
-	content: $lni-target-revenue;
+  content: $lni-target-revenue;
 }
 
 .lni-target::before {
-	content: $lni-target;
+  content: $lni-target;
 }
 
 .lni-taxi::before {
-	content: $lni-taxi;
+  content: $lni-taxi;
 }
 
 .lni-teabag::before {
-	content: $lni-teabag;
+  content: $lni-teabag;
 }
 
 .lni-telegram-original::before {
-	content: $lni-telegram-original;
+  content: $lni-telegram-original;
 }
 
 .lni-telegram::before {
-	content: $lni-telegram;
+  content: $lni-telegram;
 }
 
 .lni-text-align-center::before {
-	content: $lni-text-align-center;
+  content: $lni-text-align-center;
 }
 
 .lni-text-align-justify::before {
-	content: $lni-text-align-justify;
+  content: $lni-text-align-justify;
 }
 
 .lni-text-align-left::before {
-	content: $lni-text-align-left;
+  content: $lni-text-align-left;
 }
 
 .lni-text-align-right::before {
-	content: $lni-text-align-right;
+  content: $lni-text-align-right;
 }
 
 .lni-text-format-remove::before {
-	content: $lni-text-format-remove;
+  content: $lni-text-format-remove;
 }
 
 .lni-text-format::before {
-	content: $lni-text-format;
+  content: $lni-text-format;
 }
 
 .lni-thought::before {
-	content: $lni-thought;
+  content: $lni-thought;
 }
 
 .lni-thumbs-down::before {
-	content: $lni-thumbs-down;
+  content: $lni-thumbs-down;
 }
 
 .lni-thumbs-up::before {
-	content: $lni-thumbs-up;
+  content: $lni-thumbs-up;
 }
 
 .lni-thunder-alt::before {
-	content: $lni-thunder-alt;
+  content: $lni-thunder-alt;
 }
 
 .lni-thunder::before {
-	content: $lni-thunder;
+  content: $lni-thunder;
 }
 
 .lni-ticket-alt::before {
-	content: $lni-ticket-alt;
+  content: $lni-ticket-alt;
 }
 
 .lni-ticket::before {
-	content: $lni-ticket;
+  content: $lni-ticket;
 }
 
 .lni-tiktok::before {
-	content: $lni-tiktok;
+  content: $lni-tiktok;
 }
 
 .lni-timer::before {
-	content: $lni-timer;
+  content: $lni-timer;
 }
 
 .lni-tounge::before {
-	content: $lni-tounge;
+  content: $lni-tounge;
 }
 
 .lni-train-alt::before {
-	content: $lni-train-alt;
+  content: $lni-train-alt;
 }
 
 .lni-train::before {
-	content: $lni-train;
+  content: $lni-train;
 }
 
 .lni-trash-can::before {
-	content: $lni-trash-can;
+  content: $lni-trash-can;
 }
 
 .lni-travel::before {
-	content: $lni-travel;
+  content: $lni-travel;
 }
 
 .lni-tree::before {
-	content: $lni-tree;
+  content: $lni-tree;
 }
 
 .lni-trees::before {
-	content: $lni-trees;
+  content: $lni-trees;
 }
 
 .lni-trello::before {
-	content: $lni-trello;
+  content: $lni-trello;
 }
 
 .lni-trowel::before {
-	content: $lni-trowel;
+  content: $lni-trowel;
 }
 
 .lni-tshirt::before {
-	content: $lni-tshirt;
+  content: $lni-tshirt;
 }
 
 .lni-tumblr::before {
-	content: $lni-tumblr;
+  content: $lni-tumblr;
 }
 
 .lni-twitch::before {
-	content: $lni-twitch;
+  content: $lni-twitch;
 }
 
 .lni-twitter-filled::before {
-	content: $lni-twitter-filled;
+  content: $lni-twitter-filled;
 }
 
 .lni-twitter-original::before {
-	content: $lni-twitter-original;
+  content: $lni-twitter-original;
 }
 
 .lni-twitter::before {
-	content: $lni-twitter;
+  content: $lni-twitter;
 }
 
 .lni-ubuntu::before {
-	content: $lni-ubuntu;
+  content: $lni-ubuntu;
 }
 
 .lni-underline::before {
-	content: $lni-underline;
+  content: $lni-underline;
 }
 
 .lni-unlink::before {
-	content: $lni-unlink;
+  content: $lni-unlink;
 }
 
 .lni-unlock::before {
-	content: $lni-unlock;
+  content: $lni-unlock;
 }
 
 .lni-unsplash::before {
-	content: $lni-unsplash;
+  content: $lni-unsplash;
 }
 
 .lni-upload::before {
-	content: $lni-upload;
+  content: $lni-upload;
 }
 
 .lni-user::before {
-	content: $lni-user;
+  content: $lni-user;
 }
 
 .lni-users::before {
-	content: $lni-users;
+  content: $lni-users;
 }
 
 .lni-ux::before {
-	content: $lni-ux;
+  content: $lni-ux;
 }
 
 .lni-vector::before {
-	content: $lni-vector;
+  content: $lni-vector;
 }
 
 .lni-video::before {
-	content: $lni-video;
+  content: $lni-video;
 }
 
 .lni-vimeo::before {
-	content: $lni-vimeo;
+  content: $lni-vimeo;
 }
 
 .lni-visa::before {
-	content: $lni-visa;
+  content: $lni-visa;
 }
 
 .lni-vk::before {
-	content: $lni-vk;
+  content: $lni-vk;
 }
 
 .lni-volume-high::before {
-	content: $lni-volume-high;
+  content: $lni-volume-high;
 }
 
 .lni-volume-low::before {
-	content: $lni-volume-low;
+  content: $lni-volume-low;
 }
 
 .lni-volume-medium::before {
-	content: $lni-volume-medium;
+  content: $lni-volume-medium;
 }
 
 .lni-volume-mute::before {
-	content: $lni-volume-mute;
+  content: $lni-volume-mute;
 }
 
 .lni-volume::before {
-	content: $lni-volume;
+  content: $lni-volume;
 }
 
 .lni-wallet::before {
-	content: $lni-wallet;
+  content: $lni-wallet;
 }
 
 .lni-warning::before {
-	content: $lni-warning;
+  content: $lni-warning;
 }
 
 .lni-website-alt::before {
-	content: $lni-website-alt;
+  content: $lni-website-alt;
 }
 
 .lni-website::before {
-	content: $lni-website;
+  content: $lni-website;
 }
 
 .lni-wechat::before {
-	content: $lni-wechat;
+  content: $lni-wechat;
 }
 
 .lni-weight::before {
-	content: $lni-weight;
+  content: $lni-weight;
 }
 
 .lni-whatsapp::before {
-	content: $lni-whatsapp;
+  content: $lni-whatsapp;
 }
 
 .lni-wheelbarrow::before {
-	content: $lni-wheelbarrow;
+  content: $lni-wheelbarrow;
 }
 
 .lni-wheelchair::before {
-	content: $lni-wheelchair;
+  content: $lni-wheelchair;
 }
 
 .lni-windows::before {
-	content: $lni-windows;
+  content: $lni-windows;
 }
 
 .lni-wordpress-filled::before {
-	content: $lni-wordpress-filled;
+  content: $lni-wordpress-filled;
 }
 
 .lni-wordpress::before {
-	content: $lni-wordpress;
+  content: $lni-wordpress;
 }
 
 .lni-world-alt::before {
-	content: $lni-world-alt;
+  content: $lni-world-alt;
 }
 
 .lni-world::before {
-	content: $lni-world;
+  content: $lni-world;
 }
 
 .lni-write::before {
-	content: $lni-write;
+  content: $lni-write;
 }
 
 .lni-xbox::before {
-	content: $lni-xbox;
+  content: $lni-xbox;
 }
 
 .lni-yahoo::before {
-	content: $lni-yahoo;
+  content: $lni-yahoo;
 }
 
 .lni-ycombinator::before {
-	content: $lni-ycombinator;
+  content: $lni-ycombinator;
 }
 
 .lni-yen::before {
-	content: $lni-yen;
+  content: $lni-yen;
 }
 
 .lni-youtube::before {
-	content: $lni-youtube;
+  content: $lni-youtube;
 }
 
 .lni-zip::before {
-	content: $lni-zip;
+  content: $lni-zip;
 }
 
 .lni-zoom-in::before {
-	content: $lni-zoom-in;
+  content: $lni-zoom-in;
 }
 
 .lni-zoom-out::before {
-	content: $lni-zoom-out;
+  content: $lni-zoom-out;
 }
+

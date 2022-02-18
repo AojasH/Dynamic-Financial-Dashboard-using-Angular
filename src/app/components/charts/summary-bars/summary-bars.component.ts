@@ -1,105 +1,176 @@
-import {
-	Component,
-	ElementRef,
-	OnDestroy,
-	OnInit,
-	ViewChild,
-} from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
+import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import { CurrencyPipe } from '@angular/common';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
-import { ChartComponent } from 'ng-apexcharts';
-import { ChartOptions } from 'src/app/interfaces/chart-options';
-import { Observable, Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-summary-bars',
 	templateUrl: './summary-bars.component.html',
 	styleUrls: ['./summary-bars.component.scss'],
 })
-export class SummaryBarsComponent implements OnInit, OnDestroy {
-	@ViewChild('chart') chart!: ChartComponent;
-	public chartOptions!: Partial<ChartOptions>;
+export class SummaryBarsComponent implements OnInit {
+	@ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
-	public chartHeight!: Subscription;
+	public isLoading = false;
+
+	private mainColor = '#ff4b3e';
+	private secondColor = '#2b2b2b';
+
+	public chartType: ChartType = 'line';
+	public chartPlugins = [DataLabelsPlugin];
+
+	public chartOptions: ChartConfiguration['options'] = {
+		onResize: () => this.changeChartData(),
+		datasets: { line: { pointBackgroundColor: '#41b57a', fill: 'origin' } },
+		elements: {
+			line: {
+				tension: 0.5,
+			},
+		},
+		maintainAspectRatio: false,
+		responsive: true,
+		// We use these empty structures as placeholders for dynamic theming.
+		scales: {
+			x: {
+				ticks: {
+					font: {
+						family: 'Montserrat, sans-serif',
+					},
+				},
+				grid: {
+					display: false,
+				},
+			},
+			y: {
+				min: 0,
+				ticks: {
+					callback: (label) => {
+						if (label === 0) return '';
+
+						if (label < 1000) return label;
+
+						return `R$ ${(label as number) / 1000}K`;
+					},
+					stepSize: 1000,
+					font: {
+						family: 'Montserrat, sans-serif',
+					},
+				},
+				alignToPixels: true,
+			},
+		},
+		plugins: {
+			legend: {
+				display: false,
+			},
+			datalabels: {
+				display: false,
+				clamp: true,
+				font: {
+					family: 'Montserrat, sans-serif',
+				},
+			},
+			tooltip: {
+				enabled: true,
+				callbacks: {
+					label: (context) => {
+						const value = context.raw as number;
+
+						return this.currencyPipe.transform(
+							value,
+							'BRL'
+						) as string;
+					},
+					title: () => '',
+				},
+				displayColors: false,
+				bodyFont: {
+					family: 'Montserrat, sans-serif',
+				},
+			},
+		},
+	};
+
+	public chartData: ChartData<'bar'> = {
+		labels: [],
+		datasets: [
+			{
+				data: [],
+				backgroundColor: (context) => {
+					const chart = context.chart;
+					const { ctx, chartArea } = chart;
+
+					if (chartArea) {
+						const gradient = ctx.createLinearGradient(
+							0,
+							chartArea.bottom,
+							0,
+							chartArea.top
+						);
+
+						gradient.addColorStop(0, 'RGBA(211,236,223,0)');
+						gradient.addColorStop(1, '#d3ecdf');
+
+						return gradient;
+					}
+
+					return '';
+				},
+				hoverBackgroundColor: this.mainColor,
+				borderRadius: 5,
+				borderColor: '#41b57a',
+			},
+		],
+	};
 
 	constructor(
 		private currencyPipe: CurrencyPipe,
 		private screen: ScreenSizeService
-	) {
-		this.chartOptions = {
-			legend: { show: false },
-
-			states: {
-				hover: { filter: { type: 'none' } },
-				active: { filter: { type: 'none' } },
-			},
-			series: [
-				{
-					name: 'Saída',
-					data: [
-						785, 1579, 2157, 1456, 1905, 1100, 800, 1600, 1400,
-						2000, 1000, 1453.23,
-					],
-				},
-			],
-			chart: {
-				type: 'bar',
-				redrawOnParentResize: true,
-				redrawOnWindowResize: true,
-				fontFamily: 'Montserrat, sans-serif',
-			},
-			plotOptions: {
-				bar: {
-					horizontal: false,
-					distributed: true,
-					borderRadius: 5,
-				},
-			},
-			dataLabels: {
-				enabled: false,
-				style: {
-					fontFamily: 'Montserrat, sans-serif',
-				},
-			},
-			fill: {
-				opacity: 1,
-			},
-			xaxis: {
-				type: 'category',
-				categories: [
-					'Março/2021',
-					'Abril/2021',
-					'Maio/2021',
-					'Junho/2021',
-					'Julho/2021',
-					'Agosto/2021',
-					'Setembro/2021',
-					'Outubro/2021',
-					'Novembro/2021',
-					'Dezembro/2021',
-					'Janeiro/2022',
-					'Fevereiro/2022',
-				],
-			},
-			colors: ['#f24646', '#28292d', '#151618', '#7f828a', '#d3d3d3'],
-			tooltip: { enabled: true },
-		};
-	}
+	) {}
 
 	ngOnInit(): void {
-		this.chartHeight = this.screen.overviewSubject.subscribe((height) => {
-			console.log(height);
-
-			setTimeout(() => {
-				if (this.chart)
-					this.chart.updateOptions({
-						chart: { height: height - 75 - 28.797 },
-					});
-			}, 200);
-		});
+		this.changeChartData();
 	}
 
-	ngOnDestroy(): void {
-		this.chartHeight.unsubscribe();
+	changeChartData() {
+		if (this.screen.isScreenDesktop()) {
+			this.chartData.datasets[0].data = [
+				800.41, 1345.41, 2563.41, 475.41, 1785.41, 1100.41, 2450.41,
+				1700.41, 1400.41, 1900.41, 800.41, 1453.23,
+			];
+
+			this.chartData.labels = [
+				'Fev/21',
+				'Mar/21',
+				'Abr/21',
+				'Mai/21',
+				'Jun/21',
+				'Jul/21',
+				'Ago/21',
+				'Set/21',
+				'Nov/21',
+				'Dez/21',
+				'Jan/22',
+				'Fev/22',
+			];
+		} else {
+			this.chartData.datasets[0].data = [
+				1785.41, 1100.41, 2450.41, 1700.41, 1400.41, 1900.41, 800.41,
+				1453.23,
+			];
+
+			this.chartData.labels = [
+				'Jun/21',
+				'Jul/21',
+				'Ago/21',
+				'Set/21',
+				'Nov/21',
+				'Dez/21',
+				'Jan/22',
+				'Fev/22',
+			];
+		}
 	}
 }

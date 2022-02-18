@@ -1,14 +1,10 @@
-<apx-chart
-	[series]="chartOptions.series!"
-	[chart]="chartOptions.chart!"
-	[labels]="chartOptions.labels!"
-	[dataLabels]="chartOptions.dataLabels!"
-	[plotOptions]="chartOptions.plotOptions!"
-	[responsive]="chartOptions.responsive!"
-	[legend]="chartOptions.legend!"
-	[colors]="chartOptions.colors!"
-	[tooltip]="chartOptions.tooltip!"
-	[states]="chartOptions.states!"
-	[xaxis]="chartOptions.xaxis!"
-	[fill]="chartOptions.fill!"
-></apx-chart>
+<div class="chart_container">
+	<canvas
+		baseChart
+		[data]="chartData"
+		[type]="chartType"
+		[options]="chartOptions"
+		[plugins]="chartPlugins"
+	>
+	</canvas>
+</div>

@@ -1,31 +1,23 @@
 @import "../../../../assets/styles/variables.scss";
 
 .topbar_container {
-	background-color: white;
+	background-color: $background-color-clear;
 
 	display: flex;
 	align-items: center;
 
-	padding-top: 15px;
+	padding-top: 25px;
 	padding-left: 20px;
-	padding-bottom: 15px;
+	padding-right: 25px;
+
+	color: $text-color-primary;
 }
 
 .topbar_title {
 	font-weight: 600;
 	font-size: 1.5rem;
+	line-height: 1.5rem;
 	flex-grow: 1;
-}
-
-.user {
-	margin-right: 15px;
-}
-
-.icons {
-	font-size: 1.4rem;
-	display: flex;
-	align-items: center;
-	margin-right: 25px;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -44,23 +36,12 @@
 @media only screen and (min-width: 992px) {
 	.topbar_container {
 		padding-top: 30px;
-		padding-left: 40px;
-		padding-bottom: 30px;
 	}
 
 	.topbar_title {
 		font-weight: 600;
 		font-size: 2rem;
 		flex-grow: 1;
-	}
-
-	.user {
-		margin-right: 40px;
-	}
-
-	.icons {
-		font-size: 1.4rem;
-		margin-right: 30px;
 	}
 }
 

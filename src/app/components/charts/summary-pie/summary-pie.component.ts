@@ -1,66 +1,106 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
-
-import { ChartComponent } from 'ng-apexcharts';
-import { ChartOptions } from 'src/app/interfaces/chart-options';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import DatalabelsPlugin from 'chartjs-plugin-datalabels';
+import { BaseChartDirective } from 'ng2-charts';
+import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
 	selector: 'app-summary-pie',
 	templateUrl: './summary-pie.component.html',
 	styleUrls: ['./summary-pie.component.scss'],
 })
-export class SummaryPieComponent implements OnInit {
-	@ViewChild('chart') chart!: ChartComponent;
-	public chartOptions!: ChartOptions;
+export class SummaryPieComponent implements OnInit, AfterViewInit {
+	@ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
-	constructor(private currencyPipe: CurrencyPipe) {
-		this.chartOptions = {
-			legend: { show: false },
-			states: {
-				hover: { filter: { type: 'none' } },
-				active: { filter: { type: 'none' } },
-			},
-			series: [340, 136, 600, 143, 234.23],
-			chart: {
-				type: 'donut',
-				// animations: { enabled: false },
-			},
-			labels: ['Compras', 'Comida', 'Carro', 'Transporte', 'Faculdade'],
-			dataLabels: {
-				enabled: true,
-				formatter: (val, opts) => {
-					const data = opts.w.config.series;
-					const index = opts.seriesIndex;
-					const labels = opts.w.config.labels;
+	public chartType: ChartType = 'doughnut';
 
-					const label = labels[index];
+	public chartData: ChartData<'doughnut'> = {
+		labels: ['Compras', 'Comida', 'Carro', 'Transporte', 'Faculdade'],
+		datasets: [
+			{
+				data: [340, 136, 600, 143, 234.23],
+				borderWidth: 0,
+				backgroundColor: [
+					'#e8e7e0',
+					'#f2f2ef',
+					'#9a9a90',
+					'#4a4a4a',
+					'#222222',
+				],
+				hoverBackgroundColor: [
+					'#e8e7e0',
+					'#f2f2ef',
+					'#9a9a90',
+					'#4a4a4a',
+					'#222222',
+				],
+				hoverBorderColor: [
+					'#e8e7e0',
+					'#f2f2ef',
+					'#9a9a90',
+					'#4a4a4a',
+					'#222222',
+				],
+				hoverOffset: 0,
+			},
+		],
+	};
+
+	public chartOptions: ChartConfiguration['options'] = {
+		layout: {
+			// padding: 15,
+		},
+		plugins: {
+			legend: {
+				display: false,
+			},
+			tooltip: { enabled: false },
+			datalabels: {
+				display: false,
+				formatter: (value, ctx) => {
 					const spentMoney = this.currencyPipe.transform(
-						data[index],
+						value,
 						'BRL'
 					) as string;
 
-					return [`${label}`, `${spentMoney}`] as unknown as string;
+					if (ctx.chart.data.labels) {
+						const label = ctx.chart.data.labels[ctx.dataIndex];
+
+						return [label, spentMoney];
+					}
+
+					return spentMoney;
 				},
-				style: {
-					fontFamily: 'Montserrat, sans-serif',
-					colors: ['#28292d'],
+				color: 'white',
+				backgroundColor: '#26272a',
+				borderColor: '#151618',
+				borderRadius: 5,
+				padding: {
+					top: 3,
+					left: 7,
+					right: 7,
+					bottom: 1,
 				},
-				background: {
-					enabled: true,
-					foreColor: '#ebebeb',
-					borderRadius: 2,
-					padding: 4,
-					opacity: 0.9,
-					borderWidth: 1,
-					borderColor: '#151618',
+				opacity: 1,
+				borderWidth: 1,
+				textAlign: 'center',
+				font: {
+					family: 'Montserrat, sans-serif',
+					weight: 600,
 				},
-				dropShadow: { enabled: false },
 			},
-			colors: ['#f24646', '#28292d', '#151618', '#7f828a', '#d3d3d3'],
-			tooltip: { enabled: false },
-			plotOptions: { pie: { expandOnClick: false } },
-		};
-	}
+		},
+	};
+
+	public chartPlugins = [DatalabelsPlugin];
+
+	constructor(
+		private currencyPipe: CurrencyPipe,
+		private screen: ScreenSizeService
+	) {}
+
+	ngAfterViewInit(): void {}
 
 	ngOnInit(): void {}
 }
