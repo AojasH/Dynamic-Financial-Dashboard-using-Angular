@@ -2,16 +2,18 @@
 
 .card_box {
 	padding-top: 10px !important;
-	border-top: 1px solid $border-color;
 }
 
 .card_box--dark {
-	border-top: 5px solid $color-primary;
-	background-color: $background-color;
+	background: linear-gradient(
+		90deg,
+		rgba(66, 94, 189, 1) 0%,
+		rgba(31, 61, 161, 1) 100%
+	);
 	color: $text-color-primary !important;
+	box-shadow: 0px 15px 31px -16px #2946a9;
 
 	.minicard_title {
-		margin-top: -4px;
 		color: $text-color-primary !important;
 	}
 }

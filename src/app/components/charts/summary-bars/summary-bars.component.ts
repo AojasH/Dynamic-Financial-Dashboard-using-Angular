@@ -22,8 +22,15 @@ export class SummaryBarsComponent implements OnInit {
 	public chartPlugins = [DataLabelsPlugin];
 
 	public chartOptions: ChartConfiguration['options'] = {
+		color: '#a2a8b5',
 		onResize: () => this.changeChartData(),
-		datasets: { line: { pointBackgroundColor: '#41b57a', fill: 'origin' } },
+		datasets: {
+			line: {
+				pointBackgroundColor: '#2946a9',
+				pointBorderColor: '#3c3d43',
+				fill: 'origin',
+			},
+		},
 		elements: {
 			line: {
 				tension: 0.5,
@@ -38,9 +45,11 @@ export class SummaryBarsComponent implements OnInit {
 					font: {
 						family: 'Montserrat, sans-serif',
 					},
+					color: '#a2a8b5',
 				},
 				grid: {
 					display: false,
+					color: '#a2a8b5',
 				},
 			},
 			y: {
@@ -57,8 +66,15 @@ export class SummaryBarsComponent implements OnInit {
 					font: {
 						family: 'Montserrat, sans-serif',
 					},
+					color: '#a2a8b5',
 				},
 				alignToPixels: true,
+				grid: {
+					color: '#838793',
+					borderDash: [4, 8],
+					borderWidth: 0,
+					lineWidth: 2,
+				},
 			},
 		},
 		plugins: {
@@ -85,7 +101,7 @@ export class SummaryBarsComponent implements OnInit {
 					},
 					title: () => '',
 				},
-				displayColors: false,
+				displayColors: true,
 				bodyFont: {
 					family: 'Montserrat, sans-serif',
 				},
@@ -110,8 +126,8 @@ export class SummaryBarsComponent implements OnInit {
 							chartArea.top
 						);
 
-						gradient.addColorStop(0, 'RGBA(211,236,223,0)');
-						gradient.addColorStop(1, '#d3ecdf');
+						gradient.addColorStop(0, 'RGBA(41,70,169,0)');
+						gradient.addColorStop(1, '#2a2e41');
 
 						return gradient;
 					}
@@ -120,7 +136,7 @@ export class SummaryBarsComponent implements OnInit {
 				},
 				hoverBackgroundColor: this.mainColor,
 				borderRadius: 5,
-				borderColor: '#41b57a',
+				borderColor: '#2946a9',
 			},
 		],
 	};

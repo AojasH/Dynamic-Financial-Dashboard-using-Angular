@@ -22,24 +22,24 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 				data: [340, 136, 600, 143, 234.23],
 				borderWidth: 0,
 				backgroundColor: [
-					'#e8e7e0',
-					'#f2f2ef',
-					'#9a9a90',
-					'#4a4a4a',
+					'#2e4284',
+					'#425ebd',
+					'#c6cfeb',
+					'#2e4284',
 					'#222222',
 				],
 				hoverBackgroundColor: [
-					'#e8e7e0',
-					'#f2f2ef',
-					'#9a9a90',
-					'#4a4a4a',
+					'#2e4284',
+					'#425ebd',
+					'#c6cfeb',
+					'#2e4284',
 					'#222222',
 				],
 				hoverBorderColor: [
-					'#e8e7e0',
-					'#f2f2ef',
-					'#9a9a90',
-					'#4a4a4a',
+					'#2e4284',
+					'#425ebd',
+					'#c6cfeb',
+					'#2e4284',
 					'#222222',
 				],
 				hoverOffset: 0,
@@ -48,17 +48,36 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 	};
 
 	public chartOptions: ChartConfiguration['options'] = {
+		// cutout: '70%',
 		layout: {
-			// padding: 15,
+			// padding: 25,
 		},
 		plugins: {
 			legend: {
 				display: false,
 			},
-			tooltip: { enabled: false },
+			tooltip: {
+				enabled: true,
+				callbacks: {
+					label: (ctx) => {
+						const spentMoney = this.currencyPipe.transform(
+							ctx.parsed,
+							'BRL'
+						) as string;
+
+						return [ctx.label, spentMoney];
+					},
+				},
+				backgroundColor: '#3c3d43',
+				titleFont: { family: 'Work Sans' },
+				titleAlign: 'center',
+				footerAlign: 'center',
+				bodyAlign: 'center',
+				displayColors: false,
+			},
 			datalabels: {
 				display: false,
-				formatter: (value, ctx) => {
+				formatter: (value: number, ctx: any) => {
 					const spentMoney = this.currencyPipe.transform(
 						value,
 						'BRL'

@@ -3,7 +3,7 @@
 html,
 body {
 	font-family: "Work Sans", sans-serif !important;
-	background-color: #9a9a90 !important;
+	background-color: #000 !important;
 	color: $text-color-dark !important;
 }
 
@@ -20,7 +20,7 @@ body {
 
 	border-radius: 10px;
 
-	border: 1px solid $border-color;
+	// border: 1px solid $border-color;
 }
 
 .card_box_title {
