@@ -1,5 +1,5 @@
 <div class="main_content">
-	<div class="grid_container">
+	<div class="grid_header">
 		<div class="minicard_balance">
 			<app-mini-card
 				title="Balanço"
@@ -13,6 +13,11 @@
 		<div class="minicard_outgoing">
 			<app-mini-card title="Saída" [value]="outgoing"></app-mini-card>
 		</div>
+		<div class="minicard_savings">
+			<app-mini-card title="Poupança" [value]="12658.45"></app-mini-card>
+		</div>
+	</div>
+	<div class="grid_main">
 		<div class="summary">
 			<app-summary-card></app-summary-card>
 		</div>

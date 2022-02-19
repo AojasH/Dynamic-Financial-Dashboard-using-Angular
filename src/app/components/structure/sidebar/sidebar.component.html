@@ -4,18 +4,20 @@
 >
 	<div class="sidebar_title" (click)="toggleSidebar($event)">
 		<div *ngIf="isSidebarExpanded; else mobileTitle">
-			<!-- <div class="sidebar_icon">
-				<i class="lni lni-money-protection"></i>
-			</div> -->
+			<div class="sidebar_icon">
+				<!-- <i class="lni lni-money-protection"></i> -->
+
+				<img src="../../../../assets/images/logo.png" alt="logo" />
+			</div>
 		</div>
 
 		<ng-template #mobileTitle>
-			<div class="sidebar_iconicon-menu">
+			<div class="sidebar_icon-menu">
 				<i class="lni lni-menu"></i>
 			</div>
 		</ng-template>
 
-		<p class="sidebar_text">Finance App</p>
+		<p class="sidebar_text">Finance</p>
 	</div>
 	<div class="items">
 		<div class="item">

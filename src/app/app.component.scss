@@ -1,11 +1,11 @@
 @import "../assets/styles/variables.scss";
 
 .content {
-	color: $color-secondary;
-	background-color: $background-color-clear;
+	color: $text-color-primary;
+	background-color: $background-color-primary;
 
-	margin-left: 60px;
-	transition: 0.3s;
+	margin-left: 70px;
+	transition: $transition;
 }
 
 /* Extra small devices (phones, 600px and down) */

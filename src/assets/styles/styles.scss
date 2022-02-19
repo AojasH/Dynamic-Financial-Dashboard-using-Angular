@@ -3,8 +3,9 @@
 html,
 body {
 	font-family: "Work Sans", sans-serif !important;
-	background-color: #000 !important;
-	color: $text-color-dark !important;
+	background-color: black !important;
+	color: $text-color-primary !important;
+	user-select: none !important;
 }
 
 .card_box {
@@ -15,17 +16,15 @@ body {
 	height: 100%;
 	padding: 15px;
 
-	color: $text-color-dark;
-	background-color: $color-secondary;
+	color: $text-color-primary;
+	background-color: $background-color-secondary;
 
-	border-radius: 10px;
-
-	// border: 1px solid $border-color;
+	border-radius: $border-radius;
 }
 
 .card_box_title {
-	font-size: 1.5rem;
-	line-height: 1.5rem;
+	font-size: 1.4rem;
+	line-height: 1.4rem;
 	font-weight: 500;
 	margin-bottom: 20px;
 }
@@ -34,5 +33,10 @@ body {
 @media (min-width: 992px) {
 	.card_box {
 		padding: 25px;
+	}
+
+	.card_box_title {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
 	}
 }

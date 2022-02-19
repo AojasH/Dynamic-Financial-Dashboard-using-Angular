@@ -1,53 +1,58 @@
 @import "../../../../assets/styles/variables.scss";
 
 .sidebar_container {
-	background-color: $background-color;
+	background-color: $background-color-sidebar;
 	color: $text-color-primary;
 
 	display: flex;
 	flex-direction: column;
 	position: fixed;
 	height: 100vh;
-	width: 60px;
-	transition: 0.3s;
+	width: 70px;
+	transition: $transition;
 	z-index: 1;
 
 	.sidebar_title {
-		color: #2946a9 !important;
+		color: $color-primary;
 
 		display: flex;
 		justify-content: center;
-		align-items: center;
 
 		font-size: 2rem;
-		padding-top: 30px;
+		padding-top: 20px;
 		padding-bottom: 10px;
 
 		font-weight: 600;
 
 		.sidebar_icon {
-			color: $color-primary;
-
-			font-size: 2.5rem;
-			font-weight: 900;
+			width: 50px;
+			height: 50px;
 		}
 
 		.sidebar_icon-menu {
-			color: $color-primary;
+			height: 32px;
+			width: 32px;
+
+			color: $text-color-secondary;
 		}
 
 		.sidebar_text {
 			width: 0;
 			opacity: 0;
-			transition: 0.3s;
+			transition: $transition;
+		}
+
+		.sidebar_icon:hover,
+		.sidebar_icon-menu:hover {
+			cursor: pointer;
 		}
 	}
 
 	.items {
 		flex-grow: 1;
 
-		padding-left: 5px;
-		padding-right: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
 		margin-top: 15px;
 
 		.item {
@@ -57,29 +62,20 @@
 }
 
 .sidebar_container--expanded {
-	width: 250px;
-	transition: 0.3s;
+	width: 230px;
+	transition: $transition;
 
 	.sidebar_title {
+		justify-content: flex-start;
+		padding-left: 15px;
+
 		.sidebar_text {
 			width: auto;
 			opacity: 1;
 			margin-left: 10px;
-			transition: 0.3s;
+			transition: $transition;
 		}
 	}
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -93,18 +89,18 @@
 		}
 
 		.sidebar_title {
-			.sidebar_icon {
-				margin-right: 10px;
-			}
+			padding-left: 20px;
+			padding-top: 30px;
 
 			.sidebar_text {
 				width: auto;
 				opacity: 1;
 			}
+
+			.sidebar_icon:hover,
+			.sidebar_icon-menu:hover {
+				cursor: default;
+			}
 		}
 	}
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }

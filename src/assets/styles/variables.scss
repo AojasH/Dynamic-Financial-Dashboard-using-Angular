@@ -1,15 +1,22 @@
 // Colors
 $color-primary: #2946a9;
-$color-secondary: #26272e;
-
-$background-color: #111315;
-$background-color-clear: #181a1c;
-
-$border-color: #ececec;
 
 $text-color-primary: #fff;
 $text-color-secondary: #a2a8b5;
-$text-color-dark: #fff;
+
+$background-color-primary: #17191b;
+$background-color-secondary: #26272e;
+$background-color-clear: #3c3d43;
+$background-color-sidebar: #111315;
+
+$gradiend-primary: linear-gradient(
+	120deg,
+	rgba(66, 94, 189, 1) 0%,
+	rgba(31, 61, 161, 1) 100%
+);
+
+$border-radius: 10px;
+$transition: 0.2s;
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {

@@ -1,9 +1,9 @@
-import { CurrencyPipe } from '@angular/common';
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { CurrencyPipe } from '@angular/common';
+
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
-import { ScreenSizeService } from 'src/app/services/screen-size.service';
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 
 @Component({
 	selector: 'app-summary-pie',
@@ -13,6 +13,13 @@ import { ScreenSizeService } from 'src/app/services/screen-size.service';
 export class SummaryPieComponent implements OnInit, AfterViewInit {
 	@ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
+	public colors = ['#2e4284', '#425ebd', '#8E9ED7', '#c6cfeb', '#1e2b56'];
+	private primaryColor = '#2946a9';
+	private borderColor = '#3c3d43';
+	private textColorSecondary = '#a2a8b5';
+	private gradientTop = 'RGBA(41,46,65,1)';
+	private gradientBottom = 'RGBA(41,70,169,0)';
+
 	public chartType: ChartType = 'doughnut';
 
 	public chartData: ChartData<'doughnut'> = {
@@ -21,103 +28,54 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 			{
 				data: [340, 136, 600, 143, 234.23],
 				borderWidth: 0,
-				backgroundColor: [
-					'#2e4284',
-					'#425ebd',
-					'#c6cfeb',
-					'#2e4284',
-					'#222222',
-				],
-				hoverBackgroundColor: [
-					'#2e4284',
-					'#425ebd',
-					'#c6cfeb',
-					'#2e4284',
-					'#222222',
-				],
-				hoverBorderColor: [
-					'#2e4284',
-					'#425ebd',
-					'#c6cfeb',
-					'#2e4284',
-					'#222222',
-				],
+				backgroundColor: this.colors,
+				hoverBackgroundColor: this.colors,
 				hoverOffset: 0,
 			},
 		],
 	};
 
 	public chartOptions: ChartConfiguration['options'] = {
-		// cutout: '70%',
-		layout: {
-			// padding: 25,
-		},
+		maintainAspectRatio: false,
+
+		cutout: '70%',
 		plugins: {
-			legend: {
-				display: false,
-			},
+			legend: { display: false },
 			tooltip: {
 				enabled: true,
 				callbacks: {
-					label: (ctx) => {
+					label: (ctx: any) => {
 						const spentMoney = this.currencyPipe.transform(
 							ctx.parsed,
 							'BRL'
 						) as string;
 
-						return [ctx.label, spentMoney];
+						return spentMoney;
+					},
+					title: (ctx: any) => {
+						return ctx[0].label;
 					},
 				},
-				backgroundColor: '#3c3d43',
-				titleFont: { family: 'Work Sans' },
+				backgroundColor: this.borderColor,
 				titleAlign: 'center',
-				footerAlign: 'center',
+				titleColor: this.textColorSecondary,
+				titleFont: { family: 'Work Sans', size: 16, weight: 'normal' },
+				titleMarginBottom: 2,
+				bodyFont: { family: 'Work Sans', size: 16 },
 				bodyAlign: 'center',
+				bodySpacing: 4,
+				padding: { left: 15, right: 15, top: 5, bottom: 5 },
 				displayColors: false,
 			},
 			datalabels: {
 				display: false,
-				formatter: (value: number, ctx: any) => {
-					const spentMoney = this.currencyPipe.transform(
-						value,
-						'BRL'
-					) as string;
-
-					if (ctx.chart.data.labels) {
-						const label = ctx.chart.data.labels[ctx.dataIndex];
-
-						return [label, spentMoney];
-					}
-
-					return spentMoney;
-				},
-				color: 'white',
-				backgroundColor: '#26272a',
-				borderColor: '#151618',
-				borderRadius: 5,
-				padding: {
-					top: 3,
-					left: 7,
-					right: 7,
-					bottom: 1,
-				},
-				opacity: 1,
-				borderWidth: 1,
-				textAlign: 'center',
-				font: {
-					family: 'Montserrat, sans-serif',
-					weight: 600,
-				},
 			},
 		},
 	};
 
 	public chartPlugins = [DatalabelsPlugin];
 
-	constructor(
-		private currencyPipe: CurrencyPipe,
-		private screen: ScreenSizeService
-	) {}
+	constructor(private currencyPipe: CurrencyPipe) {}
 
 	ngAfterViewInit(): void {}
 
