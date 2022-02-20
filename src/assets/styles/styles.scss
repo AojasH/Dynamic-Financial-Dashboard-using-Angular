@@ -26,11 +26,10 @@ body {
 	font-size: 1.4rem;
 	line-height: 1.4rem;
 	font-weight: 500;
-	margin-bottom: 20px;
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
 	.card_box {
 		padding: 25px;
 	}

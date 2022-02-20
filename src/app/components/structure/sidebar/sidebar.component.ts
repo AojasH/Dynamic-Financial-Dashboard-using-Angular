@@ -1,3 +1,4 @@
+import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ScreenSizeService } from 'src/app/services/screen-size.service';
 

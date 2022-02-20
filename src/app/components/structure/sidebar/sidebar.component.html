@@ -3,12 +3,15 @@
 	[ngClass]="{ 'sidebar_container--expanded': isSidebarExpanded }"
 >
 	<div class="sidebar_title" (click)="toggleSidebar($event)">
-		<div *ngIf="isSidebarExpanded; else mobileTitle">
+		<div
+			*ngIf="isSidebarExpanded; else mobileTitle"
+			class="sidebar_icon_container"
+		>
 			<div class="sidebar_icon">
-				<!-- <i class="lni lni-money-protection"></i> -->
-
 				<img src="../../../../assets/images/logo.png" alt="logo" />
 			</div>
+
+			<p class="sidebar_text">Finance</p>
 		</div>
 
 		<ng-template #mobileTitle>
@@ -16,17 +19,15 @@
 				<i class="lni lni-menu"></i>
 			</div>
 		</ng-template>
-
-		<p class="sidebar_text">Finance</p>
 	</div>
 	<div class="items">
 		<div class="item">
 			<app-item
 				text="Dashboard"
 				icon="home"
-				[active]="true"
 				routerLink="/dashboard"
 				[isSidebarExpanded]="isSidebarExpanded"
+				[active]="true"
 			></app-item>
 		</div>
 		<div class="item">

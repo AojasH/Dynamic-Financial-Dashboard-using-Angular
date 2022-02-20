@@ -1,13 +1,18 @@
 @import "../../../../assets/styles/variables.scss";
 
+.chart_container {
+	margin-top: 20px;
+}
+
 .statistics {
-	margin-top: 30px;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .statistics_title {
 	color: $text-color-secondary;
+	margin-top: 30px;
 	margin-bottom: 5px;
 }
 
@@ -16,6 +21,26 @@
 	line-height: 1.2rem;
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large device half screen (desktops, 880px and up)
+@media (min-width: 880px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
 }

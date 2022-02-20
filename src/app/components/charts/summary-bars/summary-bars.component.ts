@@ -31,9 +31,7 @@ export class SummaryBarsComponent implements OnInit {
 		onResize: () => this.changeChartData(),
 		datasets: {
 			line: {
-				pointHoverBackgroundColor: this.primaryColor,
 				pointHoverBorderColor: this.borderColor,
-				pointBackgroundColor: this.primaryColor,
 				pointBorderColor: this.borderColor,
 				pointHoverBorderWidth: 3,
 				pointHoverRadius: 8,
@@ -114,8 +112,6 @@ export class SummaryBarsComponent implements OnInit {
 						) as string;
 					},
 					title: (ctx) => {
-						console.log(ctx);
-
 						if (ctx[0].datasetIndex === 1)
 							return 'Gasto em ' + ctx[0].label;
 

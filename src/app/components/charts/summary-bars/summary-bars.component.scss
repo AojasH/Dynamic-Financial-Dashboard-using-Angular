@@ -1,6 +1,17 @@
 canvas {
 	width: 100% !important;
-	height: 200px !important;
+	height: 250px !important;
+}
+
+.chart_container {
+	padding-right: 10px;
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	canvas {
+		height: 400px !important;
+	}
 }
 
 // Large device half screen (desktops, 880px and up)
@@ -8,11 +19,22 @@ canvas {
 	canvas {
 		height: 350px !important;
 	}
+
+	.chart_container {
+		padding-right: 0px;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	canvas {
+		height: 400px !important;
+	}
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
 	canvas {
-		height: 400px !important;
+		height: 450px !important;
 	}
 }

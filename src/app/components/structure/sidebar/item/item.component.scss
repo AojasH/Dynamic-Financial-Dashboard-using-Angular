@@ -6,32 +6,24 @@
 
 	color: $text-color-secondary;
 
-	padding: 10px 15px 10px 15px;
+	padding: 15px 15px 15px 15px;
 	border-radius: $border-radius;
 
 	transition: $transition;
 
 	.item_text {
 		font-size: 1.2rem;
+		line-height: 1.2rem;
 		margin-left: 16px;
-
-		width: 0;
-		opacity: 0;
+		opacity: 1;
 		transition: $transition;
+		overflow: hidden;
 	}
 
 	.item_icon {
 		font-size: 1.2rem;
 		font-weight: 900;
 
-		transition: $transition;
-	}
-}
-
-.item_container--expanded {
-	.item_text {
-		width: 100%;
-		opacity: 1;
 		transition: $transition;
 	}
 }
@@ -65,7 +57,6 @@
 		.item_text {
 			opacity: 1;
 
-			width: 100%;
 			margin-top: 1px;
 			margin-right: 15px;
 		}
