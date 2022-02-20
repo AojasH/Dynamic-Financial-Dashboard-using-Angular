@@ -37,7 +37,6 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 
 	public chartOptions: ChartConfiguration['options'] = {
 		maintainAspectRatio: false,
-
 		cutout: '70%',
 		plugins: {
 			legend: { display: false },

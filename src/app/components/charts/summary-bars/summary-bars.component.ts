@@ -14,10 +14,15 @@ export class SummaryBarsComponent implements OnInit {
 	@ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
 	private primaryColor = '#2946a9';
+	private outcomeColor = '#c36669';
 	private borderColor = '#3c3d43';
 	private textColorSecondary = '#a2a8b5';
+
 	private gradientTop = 'RGBA(41,46,65,1)';
 	private gradientBottom = 'RGBA(41,70,169,0)';
+
+	private gradientOutcomeTop = 'RGBA(51,48,62,1)';
+	private gradientOutcomeBottom = 'RGBA(51,48,62,0)';
 
 	public chartType: ChartType = 'line';
 	public chartPlugins = [DataLabelsPlugin];
@@ -31,7 +36,7 @@ export class SummaryBarsComponent implements OnInit {
 				pointBackgroundColor: this.primaryColor,
 				pointBorderColor: this.borderColor,
 				pointHoverBorderWidth: 3,
-				pointHoverRadius: 10,
+				pointHoverRadius: 8,
 				fill: 'origin',
 				pointHitRadius: 20,
 				pointRadius: 0,
@@ -68,7 +73,7 @@ export class SummaryBarsComponent implements OnInit {
 
 						return `${(label as number) / 1000}K`;
 					},
-					stepSize: 1000,
+					stepSize: 500,
 					font: {
 						family: 'Work Sans',
 						size: 16,
@@ -109,7 +114,12 @@ export class SummaryBarsComponent implements OnInit {
 						) as string;
 					},
 					title: (ctx) => {
-						return 'Gastos em ' + ctx[0].label;
+						console.log(ctx);
+
+						if (ctx[0].datasetIndex === 1)
+							return 'Gasto em ' + ctx[0].label;
+
+						return 'Entrada em ' + ctx[0].label;
 					},
 				},
 				backgroundColor: this.borderColor,
@@ -154,6 +164,31 @@ export class SummaryBarsComponent implements OnInit {
 				borderRadius: 5,
 				borderColor: this.primaryColor,
 			},
+			{
+				data: [],
+				backgroundColor: (context) => {
+					const chart = context.chart;
+					const { ctx, chartArea } = chart;
+
+					if (chartArea) {
+						const gradient = ctx.createLinearGradient(
+							0,
+							chartArea.bottom,
+							0,
+							chartArea.top
+						);
+
+						gradient.addColorStop(1, this.gradientOutcomeTop);
+						gradient.addColorStop(0, this.gradientOutcomeBottom);
+
+						return gradient;
+					}
+
+					return '';
+				},
+				borderRadius: 5,
+				borderColor: this.outcomeColor,
+			},
 		],
 	};
 
@@ -170,6 +205,11 @@ export class SummaryBarsComponent implements OnInit {
 		this.chartData.datasets[0].data = [
 			800.41, 1345.41, 2563.41, 475.41, 1785.41, 1100.41, 2450.41,
 			1700.41, 1400.41, 1900.41, 800.41, 1453.23,
+		];
+
+		this.chartData.datasets[1].data = [
+			654, 1445.41, 1234.41, 800.41, 885.41, 1000.41, 2950.41, 1230.41,
+			1020.41, 1100.41, 1800.41, 453.23,
 		];
 
 		this.chartData.labels = [
