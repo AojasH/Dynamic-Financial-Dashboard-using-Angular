@@ -11,14 +11,6 @@ export class MiniCardComponent implements OnInit {
 	@Input() icon: string = '';
 	@Input() dark: boolean = false;
 
-	countUpOptions = {
-		decimalPlaces: 2,
-		duration: 1,
-		separator: '.',
-		decimal: ',',
-		prefix: 'R$ ',
-	};
-
 	constructor() {}
 
 	ngOnInit(): void {}

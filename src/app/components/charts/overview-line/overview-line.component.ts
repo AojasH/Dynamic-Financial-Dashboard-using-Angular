@@ -20,6 +20,9 @@ export class OverviewLinesComponent implements OnInit {
 	public chartPlugins = [DataLabelsPlugin];
 
 	public chartOptions: ChartConfiguration['options'] = {
+		animation: {
+			duration: 0,
+		},
 		datasets: {
 			line: {
 				fill: true,
