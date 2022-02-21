@@ -1,4 +1,4 @@
-@import "../../../assets/styles/variables.scss";
+@import "../../../styles/variables.scss";
 
 .main_content {
 	background-color: $background-color-primary;
@@ -54,7 +54,7 @@
 // Large device half screen (desktops, 880px and up)
 @media (min-width: 880px) {
 	.grid_header {
-		grid-template-areas: "minicard_balance minicard_income minicard_outgoing minicard_savings";
+		grid-template-areas: "minicard_balance minicard_income" "minicard_outgoing minicard_savings";
 		gap: 25px;
 	}
 
@@ -81,7 +81,10 @@
 }
 
 // X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 1250px) {
+	.grid_header {
+		grid-template-areas: "minicard_balance minicard_income minicard_outgoing minicard_savings";
+	}
 }
 
 // XX-Large devices (larger desktops, 1400px and up)
