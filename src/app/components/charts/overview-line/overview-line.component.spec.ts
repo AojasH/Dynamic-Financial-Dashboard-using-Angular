@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SummaryBarsComponent } from './summary-bars.component';
+import { OverviewLinesComponent } from './overview-line.component';
 
 describe('SummaryBarsComponent', () => {
-	let component: SummaryBarsComponent;
-	let fixture: ComponentFixture<SummaryBarsComponent>;
+	let component: OverviewLinesComponent;
+	let fixture: ComponentFixture<OverviewLinesComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [SummaryBarsComponent],
+			declarations: [OverviewLinesComponent],
 		}).compileComponents();
 	});
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(SummaryBarsComponent);
+		fixture = TestBed.createComponent(OverviewLinesComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

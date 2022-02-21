@@ -1,9 +1,11 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+
+import { colors } from 'src/assets/styles/variables';
 
 @Component({
 	selector: 'app-summary-pie',
@@ -13,12 +15,7 @@ import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 export class SummaryPieComponent implements OnInit, AfterViewInit {
 	@ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
-	public colors = ['#2e4284', '#425ebd', '#8E9ED7', '#c6cfeb', '#1e2b56'];
-	private primaryColor = '#2946a9';
-	private borderColor = '#3c3d43';
-	private textColorSecondary = '#a2a8b5';
-	private gradientTop = 'RGBA(41,46,65,1)';
-	private gradientBottom = 'RGBA(41,70,169,0)';
+	public colors = colors.array;
 
 	public chartType: ChartType = 'doughnut';
 
@@ -55,9 +52,9 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 						return ctx[0].label;
 					},
 				},
-				backgroundColor: this.borderColor,
+				backgroundColor: colors.border,
 				titleAlign: 'center',
-				titleColor: this.textColorSecondary,
+				titleColor: colors.text.secondary,
 				titleFont: { family: 'Work Sans', size: 16, weight: 'normal' },
 				titleMarginBottom: 2,
 				bodyFont: { family: 'Work Sans', size: 16 },

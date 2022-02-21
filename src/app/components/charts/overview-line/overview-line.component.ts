@@ -1,28 +1,19 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
+import { CurrencyPipe } from '@angular/common';
+
 import { BaseChartDirective } from 'ng2-charts';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
-import { CurrencyPipe } from '@angular/common';
-import { ScreenSizeService } from 'src/app/services/screen-size.service';
+import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
+
+import { colors } from 'src/assets/styles/variables';
 
 @Component({
 	selector: 'app-summary-bars',
-	templateUrl: './summary-bars.component.html',
-	styleUrls: ['./summary-bars.component.scss'],
+	templateUrl: './overview-line.component.html',
+	styleUrls: ['./overview-line.component.scss'],
 })
-export class SummaryBarsComponent implements OnInit {
+export class OverviewLinesComponent implements OnInit {
 	@ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
-
-	private primaryColor = '#2946a9';
-	private outcomeColor = '#c36669';
-	private borderColor = '#3c3d43';
-	private textColorSecondary = '#a2a8b5';
-
-	private gradientTop = 'RGBA(41,46,65,1)';
-	private gradientBottom = 'RGBA(41,70,169,0)';
-
-	private gradientOutcomeTop = 'RGBA(51,48,62,1)';
-	private gradientOutcomeBottom = 'RGBA(51,48,62,0)';
 
 	public chartType: ChartType = 'line';
 	public chartPlugins = [DataLabelsPlugin];
@@ -31,13 +22,13 @@ export class SummaryBarsComponent implements OnInit {
 		onResize: () => this.changeChartData(),
 		datasets: {
 			line: {
-				pointHoverBorderColor: this.borderColor,
-				pointBorderColor: this.borderColor,
+				fill: true,
+				pointRadius: 0,
+				pointHitRadius: 25,
 				pointHoverBorderWidth: 3,
 				pointHoverRadius: 8,
-				fill: 'origin',
-				pointHitRadius: 20,
-				pointRadius: 0,
+				pointHoverBorderColor: colors.border,
+				pointBorderColor: colors.border,
 			},
 		},
 		elements: {
@@ -54,19 +45,14 @@ export class SummaryBarsComponent implements OnInit {
 						family: 'Work Sans',
 						size: 16,
 					},
-					color: this.textColorSecondary,
+					color: colors.text.secondary,
 				},
-				grid: {
-					display: false,
-					color: this.textColorSecondary,
-				},
+				grid: { display: false },
 			},
 			y: {
 				min: 0,
 				ticks: {
 					callback: (label) => {
-						if (label === 0) return '0';
-
 						if (label < 1000) return label;
 
 						return `${(label as number) / 1000}K`;
@@ -77,11 +63,11 @@ export class SummaryBarsComponent implements OnInit {
 						size: 16,
 					},
 					padding: 10,
-					color: this.textColorSecondary,
+					color: colors.text.secondary,
 				},
 				alignToPixels: true,
 				grid: {
-					color: this.textColorSecondary,
+					color: colors.text.secondary,
 					borderDash: [4, 8],
 					borderWidth: 0,
 					lineWidth: 2,
@@ -89,17 +75,8 @@ export class SummaryBarsComponent implements OnInit {
 			},
 		},
 		plugins: {
-			legend: {
-				display: false,
-			},
-			datalabels: {
-				display: false,
-				clamp: true,
-				font: {
-					family: 'Work Sans',
-					size: 16,
-				},
-			},
+			legend: { display: false },
+			datalabels: { display: false },
 			tooltip: {
 				enabled: true,
 				callbacks: {
@@ -118,21 +95,21 @@ export class SummaryBarsComponent implements OnInit {
 						return 'Entrada em ' + ctx[0].label;
 					},
 				},
-				backgroundColor: this.borderColor,
+				displayColors: false,
+				backgroundColor: colors.border,
+				padding: { left: 15, right: 15, top: 5, bottom: 5 },
 				bodyFont: { family: 'Work Sans', size: 16 },
 				bodyAlign: 'center',
 				bodySpacing: 4,
-				padding: { left: 15, right: 15, top: 5, bottom: 5 },
-				displayColors: false,
 				titleAlign: 'center',
-				titleColor: this.textColorSecondary,
+				titleColor: colors.text.secondary,
 				titleFont: { family: 'Work Sans', size: 16, weight: 'normal' },
 				titleMarginBottom: 2,
 			},
 		},
 	};
 
-	public chartData: ChartData<'bar'> = {
+	public chartData: ChartData<'line'> = {
 		labels: [],
 		datasets: [
 			{
@@ -149,16 +126,17 @@ export class SummaryBarsComponent implements OnInit {
 							chartArea.top
 						);
 
-						gradient.addColorStop(1, this.gradientTop);
-						gradient.addColorStop(0, this.gradientBottom);
+						gradient.addColorStop(1, colors.gradient.income.top);
+						gradient.addColorStop(0, colors.gradient.income.bot);
 
 						return gradient;
 					}
 
 					return '';
 				},
-				borderRadius: 5,
-				borderColor: this.primaryColor,
+				borderColor: colors.primary,
+				pointBackgroundColor: colors.primary,
+				pointHoverBackgroundColor: colors.primary,
 			},
 			{
 				data: [],
@@ -174,24 +152,22 @@ export class SummaryBarsComponent implements OnInit {
 							chartArea.top
 						);
 
-						gradient.addColorStop(1, this.gradientOutcomeTop);
-						gradient.addColorStop(0, this.gradientOutcomeBottom);
+						gradient.addColorStop(1, colors.gradient.outcome.top);
+						gradient.addColorStop(0, colors.gradient.outcome.bot);
 
 						return gradient;
 					}
 
 					return '';
 				},
-				borderRadius: 5,
-				borderColor: this.outcomeColor,
+				borderColor: colors.secondary,
+				pointBackgroundColor: colors.secondary,
+				pointHoverBackgroundColor: colors.secondary,
 			},
 		],
 	};
 
-	constructor(
-		private currencyPipe: CurrencyPipe,
-		private screen: ScreenSizeService
-	) {}
+	constructor(private currencyPipe: CurrencyPipe) {}
 
 	ngOnInit(): void {
 		this.changeChartData();
