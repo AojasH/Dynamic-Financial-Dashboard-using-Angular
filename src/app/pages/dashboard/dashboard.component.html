@@ -3,18 +3,27 @@
 		<div class="minicard_balance">
 			<app-mini-card
 				title="Balanço"
-				[value]="balance"
+				[value]="summary?.balance || 0"
 				[dark]="true"
 			></app-mini-card>
 		</div>
 		<div class="minicard_income">
-			<app-mini-card title="Entrada" [value]="income"></app-mini-card>
+			<app-mini-card
+				title="Entrada"
+				[value]="summary?.income || 0"
+			></app-mini-card>
 		</div>
 		<div class="minicard_outgoing">
-			<app-mini-card title="Saída" [value]="outgoing"></app-mini-card>
+			<app-mini-card
+				title="Saída"
+				[value]="summary?.outgoing || 0"
+			></app-mini-card>
 		</div>
 		<div class="minicard_savings">
-			<app-mini-card title="Poupança" [value]="12658.45"></app-mini-card>
+			<app-mini-card
+				title="Poupança"
+				[value]="summary?.savings || 0"
+			></app-mini-card>
 		</div>
 	</div>
 	<div class="grid_main">
@@ -23,6 +32,9 @@
 		</div>
 		<div class="overview">
 			<app-overview-card></app-overview-card>
+		</div>
+		<div class="transactions">
+			<app-transactions-card></app-transactions-card>
 		</div>
 	</div>
 </div>

@@ -6,6 +6,7 @@ import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
 
 import { colors } from 'src/assets/styles/variables';
+import { FinancesService } from 'src/app/services/finances.service';
 
 @Component({
 	selector: 'app-summary-bars',
@@ -19,7 +20,6 @@ export class OverviewLinesComponent implements OnInit {
 	public chartPlugins = [DataLabelsPlugin];
 
 	public chartOptions: ChartConfiguration['options'] = {
-		onResize: () => this.changeChartData(),
 		datasets: {
 			line: {
 				fill: true,
@@ -167,36 +167,28 @@ export class OverviewLinesComponent implements OnInit {
 		],
 	};
 
-	constructor(private currencyPipe: CurrencyPipe) {}
+	constructor(
+		private currencyPipe: CurrencyPipe,
+		private finance: FinancesService
+	) {}
 
 	ngOnInit(): void {
-		this.changeChartData();
-	}
+		this.finance.getOverview().subscribe((res) => {
+			const months = res.map(({ month }) => {
+				return month;
+			});
 
-	changeChartData() {
-		this.chartData.datasets[0].data = [
-			800.41, 1345.41, 2563.41, 475.41, 1785.41, 1100.41, 2450.41,
-			1700.41, 1400.41, 1900.41, 800.41, 1453.23,
-		];
+			const income = res.map(({ income }) => {
+				return income;
+			});
 
-		this.chartData.datasets[1].data = [
-			654, 1445.41, 1234.41, 800.41, 885.41, 1000.41, 2950.41, 1230.41,
-			1020.41, 1100.41, 1800.41, 453.23,
-		];
+			const outcome = res.map(({ outcome }) => {
+				return outcome;
+			});
 
-		this.chartData.labels = [
-			'Fev/21',
-			'Mar/21',
-			'Abr/21',
-			'Mai/21',
-			'Jun/21',
-			'Jul/21',
-			'Ago/21',
-			'Set/21',
-			'Nov/21',
-			'Dez/21',
-			'Jan/22',
-			'Fev/22',
-		];
+			this.chartData.labels = months;
+			this.chartData.datasets[0].data = income;
+			this.chartData.datasets[1].data = outcome;
+		});
 	}
 }

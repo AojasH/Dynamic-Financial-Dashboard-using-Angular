@@ -22,6 +22,7 @@
 		"chart.js": "^3.6.0",
 		"chartjs-plugin-datalabels": "^2.0.0",
 		"ng2-charts": "^3.0.8",
+		"ngx-countup": "^13.0.0",
 		"rxjs": "~7.5.0",
 		"tslib": "^2.3.0",
 		"zone.js": "~0.11.4"

@@ -1,4 +1,6 @@
 <div class="card_box" [ngClass]="{ 'card_box--dark': dark }">
 	<div class="minicard_title">{{ title }}</div>
-	<div class="minicard_value">{{ value | currency: "BRL" }}</div>
+	<div class="minicard_value" [countUp]="value" [options]="countUpOptions">
+		0
+	</div>
 </div>

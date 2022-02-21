@@ -23,6 +23,9 @@
 .overview {
 	grid-area: overview;
 }
+.transactions {
+	grid-area: transactions;
+}
 
 .grid_header {
 	display: grid;
@@ -34,7 +37,7 @@
 	margin-top: 24px;
 	display: grid;
 	gap: 24px;
-	grid-template-areas: "overview" "summary";
+	grid-template-areas: "overview" "summary" "transactions";
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -55,7 +58,7 @@
 	}
 
 	.grid_main {
-		grid-template-areas: "overview summary";
+		grid-template-areas: "overview summary" "transactions transactions";
 	}
 
 	.main_content {
@@ -70,7 +73,7 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 	.grid_main {
-		grid-template-areas: "overview overview summary";
+		grid-template-areas: "overview overview summary" "transactions transactions transactions";
 	}
 }
 

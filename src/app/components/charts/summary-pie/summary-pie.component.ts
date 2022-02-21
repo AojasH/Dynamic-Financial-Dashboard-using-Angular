@@ -6,6 +6,7 @@ import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 import { colors } from 'src/assets/styles/variables';
+import { FinancesService } from 'src/app/services/finances.service';
 
 @Component({
 	selector: 'app-summary-pie',
@@ -20,13 +21,14 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 	public chartType: ChartType = 'doughnut';
 
 	public chartData: ChartData<'doughnut'> = {
-		labels: ['Compras', 'Comida', 'Carro', 'Transporte', 'Faculdade'],
+		labels: [],
 		datasets: [
 			{
-				data: [340, 136, 600, 143, 234.23],
+				data: [],
 				borderWidth: 0,
-				backgroundColor: this.colors,
-				hoverBackgroundColor: this.colors,
+				backgroundColor: colors.array,
+				hoverBackgroundColor: colors.array,
+				hoverBorderColor: colors.array,
 				hoverOffset: 0,
 			},
 		],
@@ -71,9 +73,26 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 
 	public chartPlugins = [DatalabelsPlugin];
 
-	constructor(private currencyPipe: CurrencyPipe) {}
+	constructor(
+		private currencyPipe: CurrencyPipe,
+		private finances: FinancesService
+	) {}
 
 	ngAfterViewInit(): void {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.finances.getMonthlySpending().subscribe((res) => {
+			const spendingValue = res.map(({ value }) => {
+				return value;
+			});
+
+			const spendingTitle = res.map(({ spent }) => {
+				return spent;
+			});
+
+			this.chartData.datasets[0].data = spendingValue;
+
+			this.chartData.labels = spendingTitle;
+		});
+	}
 }

@@ -8,17 +8,23 @@
 	<div class="statistics">
 		<div class="statistics_item">
 			<div class="statistics_title">Diário</div>
-			<div class="statistics_value">R$ 76,48</div>
+			<div class="statistics_value">
+				{{ summary?.dailyOutgoing | currency: "BRL" }}
+			</div>
 		</div>
 
 		<div class="statistics_item">
 			<div class="statistics_title">Semanal</div>
-			<div class="statistics_value">R$ 484,41</div>
+			<div class="statistics_value">
+				{{ summary?.weeklyOutgoing | currency: "BRL" }}
+			</div>
 		</div>
 
 		<div class="statistics_item">
 			<div class="statistics_title">Mensal</div>
-			<div class="statistics_value">R$ 1453,23</div>
+			<div class="statistics_value">
+				{{ summary?.monthOutgoing | currency: "BRL" }}
+			</div>
 		</div>
 	</div>
 </div>

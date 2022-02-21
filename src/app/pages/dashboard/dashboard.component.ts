@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Summary } from 'src/app/interfaces/summary';
+import { FinancesService } from 'src/app/services/finances.service';
 
 @Component({
 	selector: 'app-dashboard',
@@ -6,20 +8,13 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-	balance: number = 0;
-	outgoing: number = 0;
-	income: number = 0;
+	summary!: Summary;
 
-	constructor() {}
+	constructor(private finances: FinancesService) {}
 
 	ngOnInit(): void {
-		this.calculateBalance();
-	}
-
-	calculateBalance() {
-		this.income = 2351.7;
-		this.outgoing = 1453.23;
-
-		this.balance = this.income - this.outgoing;
+		this.finances.getSummary().subscribe((res) => {
+			this.summary = res;
+		});
 	}
 }
