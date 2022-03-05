@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TopbarComponent } from './topbar/topbar.component';
@@ -15,7 +14,7 @@ import { RouterModule } from '@angular/router';
 		UserComponent,
 		SidebarItemComponent,
 	],
-	imports: [CommonModule, RouterModule, BrowserAnimationsModule],
+	imports: [CommonModule, RouterModule],
 	exports: [
 		SidebarComponent,
 		TopbarComponent,

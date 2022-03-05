@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { ConfigRoutingModule } from './config-routing.module';
 
-
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    ConfigRoutingModule
-  ]
+	declarations: [],
+	imports: [CommonModule, ConfigRoutingModule],
 })
-export class ConfigModule { }
+export class ConfigModule {}

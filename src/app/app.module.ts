@@ -8,13 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { PagesModule } from './pages/pages.module';
-import { StructureModule } from './components/structure/structure.module';
 
 registerLocaleData(ptBr);
 
 @NgModule({
 	declarations: [AppComponent],
-	imports: [BrowserModule, AppRoutingModule, PagesModule, StructureModule],
+	imports: [BrowserModule, AppRoutingModule, PagesModule],
 	providers: [CurrencyPipe, { provide: LOCALE_ID, useValue: 'pt' }],
 	bootstrap: [AppComponent],
 })
