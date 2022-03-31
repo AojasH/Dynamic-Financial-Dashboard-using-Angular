@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable, of, switchMap } from 'rxjs';
 import { Summary } from '../interfaces/summary';
+import { Spending } from '../interfaces/spending';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FinancesService {
-	constructor() {}
+	constructor(private httpClient: HttpClient) {}
 
 	getSummary(): Observable<Summary> {
 		return this.getMonthlySpending().pipe(
@@ -41,14 +43,10 @@ export class FinancesService {
 		);
 	}
 
-	getMonthlySpending() {
-		return of([
-			{ spent: 'Carro', value: 700 },
-			{ spent: 'Comida', value: 136 },
-			{ spent: 'Roupa', value: 340 },
-			{ spent: 'Faculdade', value: 467.32 },
-			{ spent: 'Combustível', value: 123.7 },
-		]); // Data must come from backend
+	getMonthlySpending(): Observable<Spending[]> {
+		return this.httpClient.get<Spending[]>(
+			'http://localhost:3000/spending'
+		);
 	}
 
 	getOverview() {

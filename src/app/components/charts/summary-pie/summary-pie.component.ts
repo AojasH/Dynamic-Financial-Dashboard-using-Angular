@@ -85,6 +85,8 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 
 	ngOnInit(): void {
 		this.finances.getMonthlySpending().subscribe((res) => {
+			console.log(res);
+
 			const spendingValue = res.map(({ value }) => {
 				return value;
 			});
@@ -94,8 +96,8 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 			});
 
 			this.chartData.datasets[0].data = spendingValue;
-
 			this.chartData.labels = spendingTitle;
+			this.chart.update();
 		});
 	}
 }
