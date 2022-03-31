@@ -7,6 +7,7 @@ import { BaseChartDirective } from 'ng2-charts';
 
 import { colors } from 'src/styles/variables';
 import { FinancesService } from 'src/app/services/finances.service';
+import { pluck } from 'rxjs';
 
 @Component({
 	selector: 'app-summary-pie',
@@ -84,20 +85,16 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 	ngAfterViewInit(): void {}
 
 	ngOnInit(): void {
-		this.finances.getMonthlySpending().subscribe((res) => {
-			console.log(res);
+		this.finances
+			.getMonthlySpending()
+			.pipe(pluck('spending'))
+			.subscribe((res) => {
+				const spendingValue = res.map(({ value }) => value);
+				const spendingLabels = res.map(({ spent }) => spent);
 
-			const spendingValue = res.map(({ value }) => {
-				return value;
+				this.chartData.datasets[0].data = spendingValue;
+				this.chartData.labels = spendingLabels;
+				this.chart.update();
 			});
-
-			const spendingTitle = res.map(({ spent }) => {
-				return spent;
-			});
-
-			this.chartData.datasets[0].data = spendingValue;
-			this.chartData.labels = spendingTitle;
-			this.chart.update();
-		});
 	}
 }

@@ -7,6 +7,7 @@ import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
 
 import { colors } from 'src/styles/variables';
 import { FinancesService } from 'src/app/services/finances.service';
+import { pipe, pluck } from 'rxjs';
 
 @Component({
 	selector: 'app-summary-bars',
@@ -176,22 +177,18 @@ export class OverviewLinesComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.finance.getOverview().subscribe((res) => {
-			const months = res.map(({ month }) => {
-				return month;
-			});
+		this.finance
+			.getOverview()
+			.pipe(pluck('overview'))
+			.subscribe((res) => {
+				const months = res.map(({ month }) => month);
+				const income = res.map(({ income }) => income);
+				const outcome = res.map(({ outcome }) => outcome);
 
-			const income = res.map(({ income }) => {
-				return income;
+				this.chartData.labels = months;
+				this.chartData.datasets[0].data = income;
+				this.chartData.datasets[1].data = outcome;
+				this.chart?.update();
 			});
-
-			const outcome = res.map(({ outcome }) => {
-				return outcome;
-			});
-
-			this.chartData.labels = months;
-			this.chartData.datasets[0].data = income;
-			this.chartData.datasets[1].data = outcome;
-		});
 	}
 }
