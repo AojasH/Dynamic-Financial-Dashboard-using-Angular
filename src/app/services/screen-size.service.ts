@@ -7,11 +7,11 @@ import { fromEvent, Observable } from 'rxjs';
 export class ScreenSizeService {
 	constructor() {}
 
-	resize(): Observable<Event> {
+	public resize(): Observable<Event> {
 		return fromEvent(window, 'resize');
 	}
 
-	isScreenDesktop(): boolean {
+	public isScreenDesktop(): boolean {
 		return window.matchMedia('(min-width: 992px)').matches;
 	}
 }

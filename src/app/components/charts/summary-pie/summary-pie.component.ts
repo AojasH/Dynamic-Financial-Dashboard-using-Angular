@@ -7,17 +7,16 @@ import { BaseChartDirective } from 'ng2-charts';
 
 import { colors } from 'src/styles/variables';
 import { FinancesService } from 'src/app/services/finances.service';
-import { pluck } from 'rxjs';
 
 @Component({
 	selector: 'app-summary-pie',
 	templateUrl: './summary-pie.component.html',
 	styleUrls: ['./summary-pie.component.scss'],
 })
-export class SummaryPieComponent implements OnInit, AfterViewInit {
+export class SummaryPieComponent implements OnInit {
 	@ViewChild(BaseChartDirective) chart!: BaseChartDirective;
 
-	public colors = colors.array;
+	public colors = [...colors.array, ...colors.array, ...colors.array];
 
 	public chartType: ChartType = 'doughnut';
 
@@ -82,19 +81,15 @@ export class SummaryPieComponent implements OnInit, AfterViewInit {
 		private finances: FinancesService
 	) {}
 
-	ngAfterViewInit(): void {}
-
 	ngOnInit(): void {
-		this.finances
-			.getMonthlySpending()
-			.pipe(pluck('spending'))
-			.subscribe((res) => {
-				const spendingValue = res.map(({ value }) => value);
-				const spendingLabels = res.map(({ spent }) => spent);
+		this.finances.monthlySpending().subscribe((res) => {
+			const spendingValue = res.map(({ value }) => value);
+			const spendingLabels = res.map(({ category }) => category);
 
-				this.chartData.datasets[0].data = spendingValue;
-				this.chartData.labels = spendingLabels;
-				this.chart.update();
-			});
+			this.chartData.datasets[0].data = spendingValue;
+			this.chartData.labels = spendingLabels;
+
+			if (this.chart) this.chart.update();
+		});
 	}
 }

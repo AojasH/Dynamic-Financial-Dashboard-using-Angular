@@ -14,6 +14,9 @@ const routes: Routes = [
 					import('./dashboard/dashboard.module').then(
 						(m) => m.DashboardModule
 					),
+				data: {
+					title: 'Dashboard',
+				},
 			},
 			{
 				path: 'investments',
@@ -21,6 +24,9 @@ const routes: Routes = [
 					import('./investments/investments.module').then(
 						(m) => m.InvestmentsModule
 					),
+				data: {
+					title: 'Investimentos',
+				},
 			},
 			{
 				path: 'config',
@@ -28,6 +34,9 @@ const routes: Routes = [
 					import('./config/config.module').then(
 						(m) => m.ConfigModule
 					),
+				data: {
+					title: 'Configurações',
+				},
 			},
 		],
 	},

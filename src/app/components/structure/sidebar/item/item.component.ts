@@ -5,13 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
 	templateUrl: './item.component.html',
 	styleUrls: ['./item.component.scss'],
 })
-export class SidebarItemComponent implements OnInit {
-	@Input() text: string = '';
-	@Input() icon: string = '';
-	@Input() active: boolean = false;
-	@Input() isSidebarExpanded: boolean = false;
-
-	constructor() {}
-
-	ngOnInit(): void {}
+export class SidebarItemComponent {
+	@Input() public text: string = '';
+	@Input() public icon: string = '';
+	@Input() public active: boolean = false;
+	@Input() public isSidebarExpanded: boolean = false;
 }

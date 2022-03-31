@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FinancesService } from 'src/app/services/finances.service';
 
 @Component({
 	selector: 'app-transactions-card',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./transactions-card.component.scss'],
 })
 export class TransactionsCardComponent implements OnInit {
-	constructor() {}
+	public $transactions = this.finances.transactions();
+
+	constructor(private finances: FinancesService) {}
 
 	ngOnInit(): void {}
 }

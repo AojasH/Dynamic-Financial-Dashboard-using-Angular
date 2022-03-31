@@ -1,5 +1,5 @@
 <div class="main_content">
-	<div class="grid_header">
+	<div class="grid_header" *ngIf="$summary | async as summary">
 		<div class="minicard_balance">
 			<app-mini-card
 				title="Balanço"

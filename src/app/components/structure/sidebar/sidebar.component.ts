@@ -12,7 +12,7 @@ export class SidebarComponent implements OnInit {
 	constructor(private screenSizeService: ScreenSizeService) {}
 
 	@HostListener('window:resize', ['$event'])
-	onResize() {
+	private onResize() {
 		// Resize sidebar on screen size change mobile <-> desktop
 		this.toggleSidebar();
 	}

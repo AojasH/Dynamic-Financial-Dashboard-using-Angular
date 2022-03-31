@@ -6,8 +6,7 @@
 		"start": "ng serve --o",
 		"build": "ng build --resources-output-path resources --optimization true",
 		"watch": "ng build --watch --configuration development",
-		"test": "ng test",
-		"server": "json-server --watch fake-db/db.json"
+		"test": "ng test"
 	},
 	"private": true,
 	"dependencies": {

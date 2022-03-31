@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Summary } from 'src/app/interfaces/summary';
+import { Component } from '@angular/core';
 import { FinancesService } from 'src/app/services/finances.service';
 
 @Component({
@@ -7,14 +6,8 @@ import { FinancesService } from 'src/app/services/finances.service';
 	templateUrl: './dashboard.component.html',
 	styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements OnInit {
-	summary!: Summary;
+export class DashboardComponent {
+	public $summary = this.finances.summary();
 
 	constructor(private finances: FinancesService) {}
-
-	ngOnInit(): void {
-		this.finances.getSummary().subscribe((res) => {
-			this.summary = res;
-		});
-	}
 }

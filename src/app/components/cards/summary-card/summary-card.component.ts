@@ -13,6 +13,6 @@ export class SummaryCardComponent implements OnInit {
 	constructor(private finances: FinancesService) {}
 
 	ngOnInit(): void {
-		this.finances.getSummary().subscribe((res) => (this.summary = res));
+		this.finances.summary().subscribe((res) => (this.summary = res));
 	}
 }
