@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of, pluck, switchMap, tap } from 'rxjs';
+import { map, Observable, of, pluck, switchMap, tap } from 'rxjs';
 import { Summary } from '../interfaces/summary';
 import {
 	ApiOverview,
@@ -24,6 +24,15 @@ export class FinancesService {
 
 		return this.httpClient.get<ApiTransaction>('/api/transactions').pipe(
 			pluck('transactions'),
+			map((data) => {
+				return data.sort((a, b) =>
+					a.date!.day > b.date!.day
+						? -1
+						: b.date!.day > a.date!.day
+						? 1
+						: 0
+				);
+			}),
 			tap((data) => (this.transactionsData = data))
 		);
 	}
