@@ -9,21 +9,21 @@
 		<div class="statistics_item">
 			<div class="statistics_title">Diário</div>
 			<div class="statistics_value">
-				{{ summary?.dailyOutgoing | currency: "BRL" }}
+				{{ summary.dailyOutgoing | currency: "BRL" }}
 			</div>
 		</div>
 
 		<div class="statistics_item">
 			<div class="statistics_title">Semanal</div>
 			<div class="statistics_value">
-				{{ summary?.weeklyOutgoing | currency: "BRL" }}
+				{{ summary.weeklyOutgoing | currency: "BRL" }}
 			</div>
 		</div>
 
 		<div class="statistics_item">
 			<div class="statistics_title">Mensal</div>
 			<div class="statistics_value">
-				{{ summary?.monthOutgoing | currency: "BRL" }}
+				{{ summary.monthOutgoing | currency: "BRL" }}
 			</div>
 		</div>
 	</div>

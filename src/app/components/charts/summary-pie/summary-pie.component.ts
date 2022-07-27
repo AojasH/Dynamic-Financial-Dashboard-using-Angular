@@ -1,12 +1,13 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 
-import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
+import { ChartData, ChartType } from 'chart.js';
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 import { colors } from 'src/styles/variables';
 import { FinancesService } from 'src/app/services/finances.service';
+import { ChartConfigurationExtended } from 'src/app/interfaces/chart-fix';
 
 @Component({
 	selector: 'app-summary-pie',
@@ -34,7 +35,7 @@ export class SummaryPieComponent implements OnInit {
 		],
 	};
 
-	public chartOptions: ChartConfiguration['options'] = {
+	public chartOptions: ChartConfigurationExtended['options'] = {
 		animation: {
 			duration: 0,
 		},

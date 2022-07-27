@@ -29,11 +29,12 @@
 						"assets": ["src/favicon.ico", "src/assets"],
 						"styles": [
 							"src/styles/styles.scss",
-							"src/icons/lineicons/icon-font/lineicons.css",
-							"src/fonts/work_sans/stylesheet.css",
+							"src/assets/icons/lineicons/icon-font/lineicons.css",
+							"src/assets/fonts/work_sans/stylesheet.css",
 							"node_modules/bulma/bulma.sass"
 						],
-						"scripts": []
+						"scripts": [],
+						"allowedCommonJsDependencies": ["lodash"]
 					},
 					"configurations": {
 						"production": {
@@ -102,5 +103,7 @@
 			}
 		}
 	},
-	"defaultProject": "financial-app-angular"
+	"cli": {
+		"analytics": false
+	}
 }
