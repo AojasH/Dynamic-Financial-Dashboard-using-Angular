@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Summary } from 'src/app/interfaces/summary';
 import { FinancesService } from 'src/app/services/finances.service';
 
@@ -8,11 +9,11 @@ import { FinancesService } from 'src/app/services/finances.service';
 	styleUrls: ['./summary-card.component.scss'],
 })
 export class SummaryCardComponent implements OnInit {
-	summary!: Summary;
+	summary$!: Observable<Summary>;
 
 	constructor(private finances: FinancesService) {}
 
 	ngOnInit(): void {
-		this.finances.summary().subscribe((res) => (this.summary = res));
+		this.summary$ = this.finances.summary();
 	}
 }

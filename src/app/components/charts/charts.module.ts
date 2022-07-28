@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OverviewLinesComponent } from './overview-line/overview-line.component';
-import { SummaryPieComponent } from './summary-pie/summary-pie.component';
+import { SummaryDoughnutComponent } from './summary-doughnut/summary-doughnut.component';
 import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
-	declarations: [OverviewLinesComponent, SummaryPieComponent],
+	declarations: [OverviewLinesComponent, SummaryDoughnutComponent],
 	imports: [CommonModule, NgChartsModule],
-	exports: [OverviewLinesComponent, SummaryPieComponent],
+	exports: [OverviewLinesComponent, SummaryDoughnutComponent],
 })
 export class ChartsModule {}

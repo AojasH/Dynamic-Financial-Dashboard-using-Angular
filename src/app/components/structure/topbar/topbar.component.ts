@@ -8,7 +8,7 @@ import { filter } from 'rxjs';
 	styleUrls: ['./topbar.component.scss'],
 })
 export class TopbarComponent {
-	title = '';
+	public title!: string;
 
 	constructor(
 		private router: Router,
@@ -16,8 +16,10 @@ export class TopbarComponent {
 	) {
 		router.events
 			.pipe(filter((event) => event instanceof NavigationEnd))
-			.subscribe((data) => {
-				this.title = activatedRoute.snapshot.firstChild?.data.title;
-			});
+			.subscribe(
+				() =>
+					(this.title =
+						activatedRoute.snapshot.firstChild?.data.title)
+			);
 	}
 }

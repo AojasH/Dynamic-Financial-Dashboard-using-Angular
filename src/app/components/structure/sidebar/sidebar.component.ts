@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { ScreenSizeService } from 'src/app/services/screen-size.service';
 
 @Component({
 	selector: 'app-sidebar',
@@ -9,10 +8,8 @@ import { ScreenSizeService } from 'src/app/services/screen-size.service';
 export class SidebarComponent implements OnInit {
 	public isSidebarExpanded!: boolean;
 
-	constructor(private screenSizeService: ScreenSizeService) {}
-
 	@HostListener('window:resize', ['$event'])
-	private onResize() {
+	private onResize(): void {
 		// Resize sidebar on screen size change mobile <-> desktop
 		this.toggleSidebar();
 	}
@@ -22,14 +19,14 @@ export class SidebarComponent implements OnInit {
 	}
 
 	public toggleSidebar(event?: MouseEvent): void {
-		const isScreenDesktop = this.screenSizeService.isScreenDesktop();
+		const isBigScreen = window.matchMedia('(min-width: 992px)').matches;
 
-		if (event?.type === 'click' && !isScreenDesktop) {
+		if (event?.type === 'click' && !isBigScreen) {
 			this.isSidebarExpanded = !this.isSidebarExpanded;
 			return;
 		}
 
-		isScreenDesktop
+		isBigScreen
 			? (this.isSidebarExpanded = true)
 			: (this.isSidebarExpanded = false);
 	}

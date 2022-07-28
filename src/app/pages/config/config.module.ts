@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ConfigRoutingModule } from './config-routing.module';
+import { RouterModule } from '@angular/router';
+import { ConfigComponent } from './config.component';
 
 @NgModule({
 	declarations: [],
-	imports: [CommonModule, ConfigRoutingModule],
+	imports: [
+		CommonModule,
+		RouterModule.forChild([{ path: '', component: ConfigComponent }]),
+	],
 })
 export class ConfigModule {}

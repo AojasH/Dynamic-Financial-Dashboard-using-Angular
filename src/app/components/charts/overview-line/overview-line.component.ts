@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 import { BaseChartDirective } from 'ng2-charts';
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
@@ -13,8 +14,10 @@ import { FinancesService } from 'src/app/services/finances.service';
 	templateUrl: './overview-line.component.html',
 	styleUrls: ['./overview-line.component.scss'],
 })
-export class OverviewLinesComponent implements OnInit {
-	@ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+export class OverviewLinesComponent implements OnInit, OnDestroy {
+	@ViewChild(BaseChartDirective) private chart!: BaseChartDirective;
+
+	private financeService$!: Subscription;
 
 	public chartType: ChartType = 'line';
 	public chartPlugins = [DataLabelsPlugin];
@@ -55,11 +58,8 @@ export class OverviewLinesComponent implements OnInit {
 			y: {
 				min: 0,
 				ticks: {
-					callback: (label) => {
-						if (label < 1000) return label;
-
-						return `${(label as number) / 1000}K`;
-					},
+					callback: (label) =>
+						label < 1000 ? label : `${(label as number) / 1000}K`,
 					stepSize: 500,
 					font: {
 						family: 'Work Sans',
@@ -83,20 +83,12 @@ export class OverviewLinesComponent implements OnInit {
 			tooltip: {
 				enabled: true,
 				callbacks: {
-					label: (context) => {
-						const value = context.raw as number;
-
-						return this.currencyPipe.transform(
-							value,
-							'BRL'
-						) as string;
-					},
-					title: (ctx) => {
-						if (ctx[0].datasetIndex === 1)
-							return 'Gasto em ' + ctx[0].label;
-
-						return 'Entrada em ' + ctx[0].label;
-					},
+					label: (ctx) =>
+						this.currencyPipe.transform(ctx.parsed.y, 'BRL') ?? '',
+					title: (ctx) =>
+						ctx[0].datasetIndex === 1
+							? 'Gasto em ' + ctx[0].label
+							: 'Entrada em ' + ctx[0].label,
 				},
 				displayColors: false,
 				backgroundColor: colors.border,
@@ -135,7 +127,7 @@ export class OverviewLinesComponent implements OnInit {
 						return gradient;
 					}
 
-					return '';
+					return undefined;
 				},
 				borderColor: colors.primary,
 				pointBackgroundColor: colors.primary,
@@ -161,7 +153,7 @@ export class OverviewLinesComponent implements OnInit {
 						return gradient;
 					}
 
-					return '';
+					return undefined;
 				},
 				borderColor: colors.secondary,
 				pointBackgroundColor: colors.secondary,
@@ -172,19 +164,25 @@ export class OverviewLinesComponent implements OnInit {
 
 	constructor(
 		private currencyPipe: CurrencyPipe,
-		private finance: FinancesService
+		private financesService: FinancesService
 	) {}
 
 	ngOnInit(): void {
-		this.finance.overview().subscribe((res) => {
-			const months = res.map(({ month }) => month);
-			const income = res.map(({ income }) => income);
-			const outcome = res.map(({ outcome }) => outcome);
+		this.financeService$ = this.financesService
+			.overview()
+			.subscribe((res) => {
+				const months = res.map(({ month }) => month);
+				const income = res.map(({ income }) => income);
+				const outcome = res.map(({ outcome }) => outcome);
 
-			this.chartData.labels = months;
-			this.chartData.datasets[0].data = income;
-			this.chartData.datasets[1].data = outcome;
-			this.chart?.update();
-		});
+				this.chartData.labels = months;
+				this.chartData.datasets[0].data = income;
+				this.chartData.datasets[1].data = outcome;
+				this.chart?.update();
+			});
+	}
+
+	ngOnDestroy(): void {
+		this.financeService$.unsubscribe();
 	}
 }

@@ -1,36 +1,28 @@
 import { Injectable } from '@angular/core';
-import { map, Observable, of, pluck, switchMap, tap } from 'rxjs';
+import { map, Observable, of, switchMap, tap } from 'rxjs';
 import { Summary } from '../interfaces/summary';
-import {
-	ApiOverview,
-	ApiTransaction,
-	Overview,
-	Spending,
-	Transaction,
-} from '../api-mock/api-mock';
+import { Transaction } from '../interfaces/transaction';
 import { HttpClient } from '@angular/common/http';
+import { Spending } from '../interfaces/spending';
+import { MonthOverview } from '../interfaces/month-overview';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class FinancesService {
 	private transactionsData!: Transaction[];
-	private overviewData!: Overview[];
+	private monthOverviewData!: MonthOverview[];
 
 	constructor(private httpClient: HttpClient) {}
 
 	public transactions(): Observable<Transaction[]> {
 		if (this.transactionsData) return of(this.transactionsData);
 
-		return this.httpClient.get<ApiTransaction>('/api/transactions').pipe(
-			pluck('transactions'),
+		return this.httpClient.get<Transaction[]>('/api/transactions').pipe(
 			map((data) => {
-				return data.sort((a, b) =>
-					a.date!.day > b.date!.day
-						? -1
-						: b.date!.day > a.date!.day
-						? 1
-						: 0
+				return data.sort(
+					(a, b) =>
+						new Date(a.date).getTime() - new Date(b.date).getTime()
 				);
 			}),
 			tap((data) => (this.transactionsData = data))
@@ -99,12 +91,11 @@ export class FinancesService {
 		);
 	}
 
-	public overview(): Observable<Overview[]> {
-		if (this.overviewData) return of(this.overviewData);
+	public overview(): Observable<MonthOverview[]> {
+		if (this.monthOverviewData) return of(this.monthOverviewData);
 
-		return this.httpClient.get<ApiOverview>('/api/overview').pipe(
-			pluck('overview'),
-			tap((data) => (this.overviewData = data))
-		);
+		return this.httpClient
+			.get<MonthOverview[]>('/api/overview')
+			.pipe(tap((data) => (this.monthOverviewData = data)));
 	}
 }

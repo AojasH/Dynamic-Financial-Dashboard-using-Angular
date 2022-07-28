@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Transaction } from 'src/app/interfaces/transaction';
 import { FinancesService } from 'src/app/services/finances.service';
 
 @Component({
@@ -7,9 +9,11 @@ import { FinancesService } from 'src/app/services/finances.service';
 	styleUrls: ['./transactions-card.component.scss'],
 })
 export class TransactionsCardComponent implements OnInit {
-	public $transactions = this.finances.transactions();
+	public transactions$!: Observable<Transaction[]>;
 
 	constructor(private finances: FinancesService) {}
 
-	ngOnInit(): void {}
+	ngOnInit(): void {
+		this.transactions$ = this.finances.transactions();
+	}
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 import { ChartData, ChartType } from 'chart.js';
 import DatalabelsPlugin from 'chartjs-plugin-datalabels';
@@ -10,14 +11,16 @@ import { FinancesService } from 'src/app/services/finances.service';
 import { ChartConfigurationExtended } from 'src/app/interfaces/chart-fix';
 
 @Component({
-	selector: 'app-summary-pie',
-	templateUrl: './summary-pie.component.html',
-	styleUrls: ['./summary-pie.component.scss'],
+	selector: 'app-summary-doughnut',
+	templateUrl: './summary-doughnut.component.html',
+	styleUrls: ['./summary-doughnut.component.scss'],
 })
-export class SummaryPieComponent implements OnInit {
-	@ViewChild(BaseChartDirective) chart!: BaseChartDirective;
+export class SummaryDoughnutComponent implements OnInit, OnDestroy {
+	@ViewChild(BaseChartDirective) private chart!: BaseChartDirective;
 
-	public colors = [...colors.array, ...colors.array, ...colors.array];
+	private financesService$!: Subscription;
+
+	public colors: string[] = colors.array;
 
 	public chartType: ChartType = 'doughnut';
 
@@ -36,9 +39,7 @@ export class SummaryPieComponent implements OnInit {
 	};
 
 	public chartOptions: ChartConfigurationExtended['options'] = {
-		animation: {
-			duration: 0,
-		},
+		animation: { duration: 0 },
 		maintainAspectRatio: false,
 		cutout: '70%',
 		plugins: {
@@ -46,17 +47,9 @@ export class SummaryPieComponent implements OnInit {
 			tooltip: {
 				enabled: true,
 				callbacks: {
-					label: (ctx: any) => {
-						const spentMoney = this.currencyPipe.transform(
-							ctx.parsed,
-							'BRL'
-						) as string;
-
-						return spentMoney;
-					},
-					title: (ctx: any) => {
-						return ctx[0].label;
-					},
+					label: (ctx) =>
+						this.currencyPipe.transform(ctx.parsed, 'BRL') ?? '',
+					title: (ctx) => ctx[0].label,
 				},
 				backgroundColor: colors.border,
 				titleAlign: 'center',
@@ -79,18 +72,24 @@ export class SummaryPieComponent implements OnInit {
 
 	constructor(
 		private currencyPipe: CurrencyPipe,
-		private finances: FinancesService
+		private financesService: FinancesService
 	) {}
 
-	ngOnInit(): void {
-		this.finances.monthlySpending().subscribe((res) => {
-			const spendingValue = res.map(({ value }) => value);
-			const spendingLabels = res.map(({ category }) => category);
+	public ngOnInit(): void {
+		this.financesService$ = this.financesService
+			.monthlySpending()
+			.subscribe((res) => {
+				const spendingValue = res.map(({ value }) => value);
+				const spendingLabels = res.map(({ category }) => category);
 
-			this.chartData.datasets[0].data = spendingValue;
-			this.chartData.labels = spendingLabels;
+				this.chartData.datasets[0].data = spendingValue;
+				this.chartData.labels = spendingLabels;
 
-			if (this.chart) this.chart.update();
-		});
+				if (this.chart) this.chart.update();
+			});
+	}
+
+	public ngOnDestroy(): void {
+		this.financesService$.unsubscribe();
 	}
 }

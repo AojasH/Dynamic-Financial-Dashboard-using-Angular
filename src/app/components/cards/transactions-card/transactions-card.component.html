@@ -3,20 +3,18 @@
 
 	<div
 		class="table_container"
-		*ngFor="let transaction of $transactions | async"
+		*ngFor="let transaction of transactions$ | async"
 	>
 		<div class="table_row">
 			<p class="row_name">{{ transaction.name }}</p>
 			<p class="row_date">
-				{{ transaction.date?.day }}/{{ transaction.date?.month }}/{{
-					transaction.date?.year
-				}}
+				{{ transaction.date | date: "shortDate" }}
 			</p>
 			<p class="row_value">{{ transaction.value | currency: "BRL" }}</p>
-			<p class="row_method">{{ transaction.method?.name }}</p>
+			<p class="row_method">{{ transaction.method.name }}</p>
 			<img
 				src="../../../../assets/images/{{
-					transaction.method?.icon
+					transaction.method.icon
 				}}.png"
 				class="row_icon"
 			/>
@@ -27,26 +25,24 @@
 		<div class="desktop_table_body">
 			<div
 				class="desktop_table_row"
-				*ngFor="let transaction of $transactions | async"
+				*ngFor="let transaction of transactions$ | async"
 			>
 				<div class="row_name desktop_table_cell">
 					{{ transaction.name }}
 				</div>
 				<div class="row_date desktop_table_cell">
-					{{ transaction.date?.day }}/{{ transaction.date?.month }}/{{
-						transaction.date?.year
-					}}
+					{{ transaction.date | date: "shortDate" }}
 				</div>
 				<div class="row_value desktop_table_cell">
 					{{ transaction.value | currency: "BRL" }}
 				</div>
 				<div class="row_method desktop_table_cell">
-					{{ transaction.method?.name }}
+					{{ transaction.method.name }}
 				</div>
 				<div class="desktop_table_cell">
 					<img
 						src="../../../../assets/images/{{
-							transaction.method?.icon
+							transaction.method.icon
 						}}.png"
 						class="row_icon"
 					/>
