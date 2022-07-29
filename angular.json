@@ -31,7 +31,8 @@
 							"src/styles/styles.scss",
 							"src/assets/icons/lineicons/icon-font/lineicons.css",
 							"src/assets/fonts/work_sans/stylesheet.css",
-							"node_modules/bulma/bulma.sass"
+							"node_modules/bulma/bulma.sass",
+							"node_modules/ngx-smart-modal/ngx-smart-modal.scss"
 						],
 						"scripts": [],
 						"allowedCommonJsDependencies": ["lodash"]

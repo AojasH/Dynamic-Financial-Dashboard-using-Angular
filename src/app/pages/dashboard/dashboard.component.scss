@@ -40,6 +40,19 @@
 	grid-template-areas: "overview" "summary" "transactions";
 }
 
+.add_button_container {
+	position: sticky;
+	bottom: 0;
+	display: flex;
+	justify-content: flex-end;
+
+	.add_button {
+		z-index: 2;
+		margin-right: 20px;
+		margin-bottom: 10px;
+	}
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
 	.grid_header {
@@ -66,6 +79,11 @@
 
 	.summary {
 		min-width: 265px;
+	}
+
+	.add_button {
+		margin-right: 30px;
+		margin-bottom: 20px;
 	}
 }
 

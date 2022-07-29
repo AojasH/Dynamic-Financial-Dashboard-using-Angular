@@ -8,6 +8,7 @@ import { FinancesService } from 'src/app/services/finances.service';
 })
 export class DashboardComponent {
 	public $expenseSummary = this.finances.expenseSummary();
+	public currentDay = new Date();
 
 	constructor(private finances: FinancesService) {}
 }

@@ -11,35 +11,17 @@ $background-color-secondary: #26272e;
 $background-color-clear: #3c3d43;
 $background-color-sidebar: #111315;
 
-$gradiend-primary: linear-gradient(
+$gradient-primary: linear-gradient(
 	120deg,
+	rgba(66, 94, 189, 1) 0%,
+	rgba(31, 61, 161, 1) 100%
+);
+
+$gradient-pressed: linear-gradient(
+	0deg,
 	rgba(66, 94, 189, 1) 0%,
 	rgba(31, 61, 161, 1) 100%
 );
 
 $border-radius: 10px;
 $transition: 0.2s;
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-}
-
-// Large device half screen (desktops, 880px and up)
-@media (min-width: 880px) {
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
-
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-}
-
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-}

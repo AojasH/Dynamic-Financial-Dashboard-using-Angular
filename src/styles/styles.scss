@@ -28,6 +28,43 @@ body {
 	font-weight: 500;
 }
 
+.nsm-content {
+	border-radius: 5px !important;
+	background-color: $background-color-secondary !important;
+
+	h3 {
+		color: white !important;
+	}
+
+	.nsm-dialog-btn-close {
+		color: white !important;
+	}
+}
+
+.label {
+	color: white !important;
+	font-weight: 400 !important;
+}
+
+.select select,
+.textarea,
+.input {
+	background-color: $background-color-clear !important;
+	border-color: $background-color-primary !important;
+	color: white !important;
+}
+
+.select select::placeholder,
+.textarea::placeholder,
+.input::placeholder {
+	color: $text-color-secondary !important;
+}
+
+.select,
+select {
+	width: 100% !important;
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
 	.card_box {
