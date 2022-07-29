@@ -5,25 +5,25 @@
 		<app-summary-doughnut></app-summary-doughnut>
 	</div>
 
-	<div class="statistics" *ngIf="summary$ | async as summary">
+	<div class="statistics" *ngIf="monthSummary$ | async as monthSummary">
 		<div class="statistics_item">
 			<div class="statistics_title">Diário</div>
 			<div class="statistics_value">
-				{{ summary.dailyOutgoing | currency: "BRL" }}
+				{{ monthSummary.dailyOutgoing | currency: "BRL" }}
 			</div>
 		</div>
 
 		<div class="statistics_item">
 			<div class="statistics_title">Semanal</div>
 			<div class="statistics_value">
-				{{ summary.weeklyOutgoing | currency: "BRL" }}
+				{{ monthSummary.weeklyOutgoing | currency: "BRL" }}
 			</div>
 		</div>
 
 		<div class="statistics_item">
 			<div class="statistics_title">Mensal</div>
 			<div class="statistics_value">
-				{{ summary.monthOutgoing | currency: "BRL" }}
+				{{ monthSummary.monthOutgoing | currency: "BRL" }}
 			</div>
 		</div>
 	</div>

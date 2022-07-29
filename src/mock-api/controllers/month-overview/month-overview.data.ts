@@ -1,6 +1,6 @@
-import { MonthOverview } from '../../../interfaces/month-overview';
+import { MonthOverview } from 'src/app/interfaces/month-overview';
 
-export const monthOverviews: MonthOverview[] = [
+export const monthOverviewsSeed: MonthOverview[] = [
 	{
 		month: 'Mar/21',
 		income: 1345.41,

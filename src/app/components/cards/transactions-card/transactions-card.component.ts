@@ -14,6 +14,6 @@ export class TransactionsCardComponent implements OnInit {
 	constructor(private finances: FinancesService) {}
 
 	ngOnInit(): void {
-		this.transactions$ = this.finances.monthTransactions();
+		this.transactions$ = this.finances.transactions();
 	}
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { mockApi } from './mock-api/server';
-
+import { mockApi } from 'src/mock-api/server';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',

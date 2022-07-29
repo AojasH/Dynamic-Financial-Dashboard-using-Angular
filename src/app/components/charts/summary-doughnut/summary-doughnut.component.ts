@@ -20,7 +20,10 @@ export class SummaryDoughnutComponent implements OnInit, OnDestroy {
 
 	private financesService$!: Subscription;
 
-	public colors: string[] = colors.array;
+	public colors: string[] = Array.from(
+		{ length: 5 },
+		() => colors.array
+	).flat();
 
 	public chartType: ChartType = 'doughnut';
 
@@ -77,7 +80,7 @@ export class SummaryDoughnutComponent implements OnInit, OnDestroy {
 
 	public ngOnInit(): void {
 		this.financesService$ = this.financesService
-			.monthlySpending()
+			.monthSpending()
 			.subscribe((res) => {
 				const spendingValue = res.map(({ value }) => value);
 				const spendingLabels = res.map(({ category }) => category);

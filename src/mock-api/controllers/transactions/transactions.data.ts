@@ -1,6 +1,6 @@
-import { Transaction } from '../../../interfaces/transaction';
+import { Transaction } from 'src/app/interfaces/transaction';
 
-export const transactions: Transaction[] = [
+export const transactionsSeed: Transaction[] = [
 	{
 		name: 'iFood',
 		date: new Date('03/21/2022'),

@@ -1,28 +1,28 @@
 <div class="main_content">
-	<div class="grid_header" *ngIf="$summary | async as summary">
+	<div class="grid_header" *ngIf="$expenseSummary | async as expenseSummary">
 		<div class="minicard_balance">
 			<app-mini-card
 				title="Balanço"
-				[value]="summary?.balance || 0"
+				[value]="expenseSummary?.balance || 0"
 				[dark]="true"
 			></app-mini-card>
 		</div>
 		<div class="minicard_income">
 			<app-mini-card
 				title="Entrada"
-				[value]="summary?.income || 0"
+				[value]="expenseSummary?.income || 0"
 			></app-mini-card>
 		</div>
 		<div class="minicard_outgoing">
 			<app-mini-card
 				title="Saída"
-				[value]="summary?.outgoing || 0"
+				[value]="expenseSummary?.outgoing || 0"
 			></app-mini-card>
 		</div>
 		<div class="minicard_savings">
 			<app-mini-card
 				title="Poupança"
-				[value]="summary?.savings || 0"
+				[value]="expenseSummary?.savings || 0"
 			></app-mini-card>
 		</div>
 	</div>

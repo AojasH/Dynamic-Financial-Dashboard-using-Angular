@@ -169,7 +169,7 @@ export class OverviewLinesComponent implements OnInit, OnDestroy {
 
 	ngOnInit(): void {
 		this.financeService$ = this.financesService
-			.overview()
+			.monthOverview()
 			.subscribe((res) => {
 				const months = res.map(({ month }) => month);
 				const income = res.map(({ income }) => income);
