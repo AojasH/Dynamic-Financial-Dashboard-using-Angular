@@ -1,6 +1,6 @@
-import { MonthOverview } from '../interfaces/month-overview';
+import { MonthOverview } from '../../../interfaces/month-overview';
 
-export const overview: MonthOverview[] = [
+export const monthOverviews: MonthOverview[] = [
 	{
 		month: 'Mar/21',
 		income: 1345.41,

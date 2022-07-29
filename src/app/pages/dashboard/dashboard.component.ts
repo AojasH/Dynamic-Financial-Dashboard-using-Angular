@@ -7,7 +7,7 @@ import { FinancesService } from 'src/app/services/finances.service';
 	styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent {
-	public $summary = this.finances.summary();
+	public $summary = this.finances.getMonthSummary();
 
 	constructor(private finances: FinancesService) {}
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { mockApi } from './api-mock/api-mock';
+import { mockApi } from './mock-api/server';
 
 @Component({
 	selector: 'app-root',
