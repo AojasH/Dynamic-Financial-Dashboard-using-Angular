@@ -7,7 +7,7 @@ import DatalabelsPlugin from 'chartjs-plugin-datalabels';
 import { BaseChartDirective } from 'ng2-charts';
 
 import { colors } from 'src/styles/variables';
-import { FinancesService } from 'src/app/services/finances.service';
+import { FinancesService } from 'src/app/services/finances/finances.service';
 import { ChartConfigurationExtended } from 'src/app/interfaces/chart-fix';
 
 @Component({

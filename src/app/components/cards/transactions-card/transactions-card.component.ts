@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Transaction } from 'src/app/interfaces/transaction';
-import { FinancesService } from 'src/app/services/finances.service';
+import { FinancesService } from 'src/app/services/finances/finances.service';
 
 @Component({
 	selector: 'app-transactions-card',

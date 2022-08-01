@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FinancesService } from 'src/app/services/finances.service';
+import { FinancesService } from 'src/app/services/finances/finances.service';
 
 @Component({
 	selector: 'app-summary-card',

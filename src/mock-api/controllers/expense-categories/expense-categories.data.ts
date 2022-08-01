@@ -1,6 +1,6 @@
-import { ExpenseCategorie } from 'src/app/interfaces/expense-categorie';
+import { ExpenseCategory } from 'src/app/interfaces/expense-categorie';
 
-export const expenseCategoriesSeed: ExpenseCategorie[] = [
+export const expenseCategoriesSeed: ExpenseCategory[] = [
 	{
 		id: 'food',
 		name: 'Comida',
@@ -27,6 +27,6 @@ export const expenseCategoriesSeed: ExpenseCategorie[] = [
 	},
 	{
 		id: 'investments',
-		name: 'Investments',
+		name: 'Investimentos',
 	},
 ];

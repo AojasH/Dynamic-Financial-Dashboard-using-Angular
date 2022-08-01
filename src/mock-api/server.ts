@@ -8,13 +8,16 @@ import { summarySeed } from './controllers/expense-summary/expense-summary.data'
 import { paymentOptionsSeed } from './controllers/payment-options/payment-options.data';
 import { expenseCategoriesSeed } from './controllers/expense-categories/expense-categories.data';
 
-import { monthOverviewController } from './controllers/month-overview/month-overview.controller';
-import { monthSpendingController } from './controllers/month-spending/month-spending.controller';
-import { transactionsController } from './controllers/transactions/transactions.controller';
-import { expenseSummaryController } from './controllers/expense-summary/expense-summary.controller';
-import { monthSummaryController } from './controllers/month-summary/month-summary.controller';
-import { paymentOptionsController } from './controllers/payment-options/payment-options.controller';
-import { expenseCategoriesController } from './controllers/expense-categories/expense-categories.controller';
+import { getMonthOverview } from './controllers/month-overview/month-overview.controller';
+import { getMonthSpending } from './controllers/month-spending/month-spending.controller';
+import {
+	getTransactions,
+	newTransaction,
+} from './controllers/transactions/transactions.controller';
+import { getExpenseSummary } from './controllers/expense-summary/expense-summary.controller';
+import { getMonthSummary } from './controllers/month-summary/month-summary.controller';
+import { getPaymentOptions } from './controllers/payment-options/payment-options.controller';
+import { getExpenseCategories } from './controllers/expense-categories/expense-categories.controller';
 
 // Mock API in Client Side
 export function mockApi() {
@@ -24,15 +27,21 @@ export function mockApi() {
 		routes() {
 			this.namespace = 'api';
 
-			this.get('/expense-summary', () => expenseSummaryController());
-			this.get('/month-overview', () => monthOverviewController());
-			this.get('/month-spending', () => monthSpendingController());
-			this.get('/month-summary', () => monthSummaryController());
-			this.get('/transactions', () => transactionsController());
-			this.get('/payment-options', () => paymentOptionsController());
-			this.get('/expense-categories', () =>
-				expenseCategoriesController()
-			);
+			this.get('/expense-summary', () => getExpenseSummary());
+			this.get('/month-overview', () => getMonthOverview());
+			this.get('/month-spending', () => getMonthSpending());
+			this.get('/month-summary', () => getMonthSummary());
+			this.get('/transactions', () => getTransactions());
+			this.get('/payment-options', () => getPaymentOptions());
+			this.get('/expense-categories', () => getExpenseCategories());
+
+			this.post('/transactions/new', async (schema, request) => {
+				const res = await newTransaction(
+					JSON.parse(request.requestBody)
+				);
+
+				return res;
+			});
 		},
 	});
 }

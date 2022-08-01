@@ -56,9 +56,4 @@ export const monthOverviewsSeed: MonthOverview[] = [
 		income: 2351.7,
 		outcome: 1767.02,
 	},
-	{
-		month: 'Mar/22',
-		income: 3351.7,
-		outcome: 2986.74,
-	},
 ];

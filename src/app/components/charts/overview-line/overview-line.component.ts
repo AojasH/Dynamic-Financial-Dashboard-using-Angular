@@ -7,7 +7,7 @@ import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import { ChartConfiguration, ChartType, ChartData } from 'chart.js';
 
 import { colors } from 'src/styles/variables';
-import { FinancesService } from 'src/app/services/finances.service';
+import { FinancesService } from 'src/app/services/finances/finances.service';
 
 @Component({
 	selector: 'app-summary-bars',

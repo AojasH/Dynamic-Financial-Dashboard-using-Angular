@@ -1,8 +1,8 @@
 import { MonthSummary } from 'src/app/interfaces/month-summary';
-import { expenseSummaryController } from '../expense-summary/expense-summary.controller';
+import { getExpenseSummary } from '../expense-summary/expense-summary.controller';
 
-export function monthSummaryController(): MonthSummary {
-	const { outgoing } = expenseSummaryController();
+export function getMonthSummary(): MonthSummary {
+	const { outgoing } = getExpenseSummary();
 
 	const monthDays = 31;
 	const monthWeeks = 5;

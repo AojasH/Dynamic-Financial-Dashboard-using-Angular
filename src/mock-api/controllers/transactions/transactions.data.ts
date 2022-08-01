@@ -4,7 +4,7 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'iFood',
 		date: new Date('03/21/2022'),
-		category: 'Comida',
+		category: 'food',
 		value: 57.86,
 		method: {
 			id: 'credit_card_master',
@@ -16,21 +16,21 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'Restaurante Lorem Ipsum',
 		date: new Date('03/21/2022'),
-		category: 'Comida',
+		category: 'food',
 		value: 238.16,
 		method: { id: 'pix', name: 'PIX', icon: 'pix_icon' },
 	},
 	{
 		name: 'Financiamento Carro',
 		date: new Date('03/01/2022'),
-		category: 'Carro',
+		category: 'car',
 		value: 700,
 		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},
 	{
 		name: 'Uber',
 		date: new Date('03/14/2022'),
-		category: 'Transporte',
+		category: 'transport',
 		value: 11.9,
 		method: {
 			id: 'credit_card_master',
@@ -42,7 +42,7 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'Uber',
 		date: new Date('03/14/2022'),
-		category: 'Transporte',
+		category: 'transport',
 		value: 10.94,
 		method: {
 			id: 'credit_card_master',
@@ -54,7 +54,7 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'Xbox Game Pass',
 		date: new Date('03/01/2022'),
-		category: 'Jogos',
+		category: 'games',
 		value: 29.99,
 		method: {
 			id: 'credit_card_master',
@@ -66,7 +66,7 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'Spotify',
 		date: new Date('03/01/2022'),
-		category: 'Streaming',
+		category: 'streaming',
 		value: 29.99,
 		method: {
 			id: 'credit_card_master',
@@ -78,7 +78,7 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'Netflix',
 		date: new Date('03/11/2022'),
-		category: 'Streaming',
+		category: 'streaming',
 		value: 39.9,
 		method: {
 			id: 'credit_card_master',
@@ -90,7 +90,7 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'Combustível',
 		date: new Date('03/12/2022'),
-		category: 'Carro',
+		category: 'car',
 		value: 150,
 		method: {
 			id: 'credit_card_master',
@@ -102,21 +102,21 @@ export const transactionsSeed: Transaction[] = [
 	{
 		name: 'Estacionamento',
 		date: new Date('03/12/2022'),
-		category: 'Carro',
+		category: 'car',
 		value: 18,
 		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},
 	{
 		name: 'Faculdade',
 		date: new Date('03/01/2022'),
-		category: 'Educação',
+		category: 'education',
 		value: 1200,
 		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},
 	{
 		name: 'Poupança',
 		date: new Date('03/01/2022'),
-		category: 'Investimentos',
+		category: 'investments',
 		value: 500,
 		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},

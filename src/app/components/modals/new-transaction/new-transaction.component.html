@@ -1,0 +1,171 @@
+<ngx-smart-modal identifier="addTransactionModal">
+	<h3>Nova Transação</h3>
+
+	<form [formGroup]="newTransactionForm" (ngSubmit)="onSubmit()">
+		<div class="field">
+			<label class="label">Nome</label>
+			<div class="control">
+				<input
+					id="name"
+					formControlName="name"
+					class="input"
+					[ngClass]="{
+						'is-danger':
+							newTransactionForm.controls.name.touched &&
+							newTransactionForm.controls.name.invalid
+					}"
+					type="text"
+					placeholder="Ex: Mercado"
+				/>
+			</div>
+			<p
+				class="help is-danger"
+				*ngIf="
+					newTransactionForm.controls.name.touched &&
+					newTransactionForm.controls.name.invalid
+				"
+			>
+				Campo obrigatório.
+			</p>
+		</div>
+		<div class="field">
+			<label class="label">Data</label>
+			<div class="control">
+				<input
+					id="date"
+					formControlName="date"
+					class="input"
+					type="date"
+					placeholder="Data"
+					[ngClass]="{
+						'is-danger':
+							newTransactionForm.controls.date.touched &&
+							newTransactionForm.controls.date.invalid
+					}"
+				/>
+			</div>
+			<p
+				class="help is-danger"
+				*ngIf="
+					newTransactionForm.controls.date.touched &&
+					newTransactionForm.controls.date.invalid
+				"
+			>
+				Campo obrigatório.
+			</p>
+		</div>
+		<div class="field">
+			<label class="label">Categoria</label>
+			<div class="control">
+				<div
+					class="select"
+					[ngClass]="{
+						'is-danger':
+							newTransactionForm.controls.category.touched &&
+							newTransactionForm.controls.category.invalid
+					}"
+				>
+					<select id="category" formControlName="category">
+						<option [ngValue]="null" disabled selected>
+							Escolha uma categoria
+						</option>
+						<option
+							*ngFor="
+								let expenseCategory of $expenseCategories
+									| async
+							"
+							[ngValue]="expenseCategory.id"
+						>
+							{{ expenseCategory.name }}
+						</option>
+					</select>
+				</div>
+				<p
+					class="help is-danger"
+					*ngIf="
+						newTransactionForm.controls.category.touched &&
+						newTransactionForm.controls.category.invalid
+					"
+				>
+					Campo obrigatório.
+				</p>
+			</div>
+		</div>
+		<div class="field">
+			<label class="label">Valor</label>
+			<div class="control">
+				<input
+					id="value"
+					formControlName="value"
+					currencyMask
+					class="input"
+					[options]="{
+						prefix: 'R$ ',
+						thousands: '.',
+						decimal: ',',
+						align: 'left'
+					}"
+					placeholder="Ex: R$ 2022,13"
+					[ngClass]="{
+						'is-danger':
+							newTransactionForm.controls.value.touched &&
+							newTransactionForm.controls.value.invalid
+					}"
+				/>
+			</div>
+			<p
+				class="help is-danger"
+				*ngIf="
+					newTransactionForm.controls.value.touched &&
+					newTransactionForm.controls.value.invalid
+				"
+			>
+				Campo obrigatório.
+			</p>
+		</div>
+		<div class="field">
+			<label class="label">Pagamento</label>
+			<div class="control">
+				<div
+					class="select"
+					[ngClass]="{
+						'is-danger':
+							newTransactionForm.controls.method.touched &&
+							newTransactionForm.controls.method.invalid
+					}"
+				>
+					<select id="method" formControlName="method">
+						<option [ngValue]="null" disabled selected>
+							Escolha uma forma de pagamento
+						</option>
+						<option
+							*ngFor="
+								let paymentOption of $paymentOptions | async
+							"
+							[ngValue]="paymentOption"
+						>
+							{{ paymentOption.name }}
+						</option>
+					</select>
+				</div>
+			</div>
+			<p
+				class="help is-danger"
+				*ngIf="
+					newTransactionForm.controls.method.touched &&
+					newTransactionForm.controls.method.invalid
+				"
+			>
+				Campo obrigatório.
+			</p>
+		</div>
+
+		<button
+			class="button is-black is-fullwidth"
+			type="submit"
+			[disabled]="!newTransactionForm.valid"
+		>
+			Adicionar
+		</button>
+	</form>
+</ngx-smart-modal>

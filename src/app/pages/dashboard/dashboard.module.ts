@@ -9,6 +9,7 @@ import { ButtonModule } from 'src/app/components/button/button.module';
 
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { NewTransactionModule } from 'src/app/components/modals/new-transaction/new-transaction.module';
 
 @NgModule({
 	declarations: [DashboardComponent],
@@ -17,8 +18,7 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 		RouterModule.forChild([{ path: '', component: DashboardComponent }]),
 		CardsModule,
 		ButtonModule,
-		NgxSmartModalModule.forRoot(),
-		CurrencyMaskModule,
+		NewTransactionModule,
 	],
 	exports: [],
 })

@@ -60,6 +60,12 @@ body {
 	color: $text-color-secondary !important;
 }
 
+.is-danger.textarea,
+.is-danger.input,
+.select.is-danger select {
+	border-color: hsl(348deg, 86%, 61%) !important;
+}
+
 .select,
 select {
 	width: 100% !important;

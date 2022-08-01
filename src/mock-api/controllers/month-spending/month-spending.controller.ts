@@ -1,13 +1,20 @@
 import { Spending } from 'src/app/interfaces/spending';
-import { transactionsController } from '../transactions/transactions.controller';
+import { expenseCategoriesSeed } from '../expense-categories/expense-categories.data';
+import { getTransactions } from '../transactions/transactions.controller';
 
-export function monthSpendingController(): Spending[] {
-	const transactions = transactionsController();
+export function getMonthSpending(): Spending[] {
+	const transactions = getTransactions();
 
 	const result = Object.values(
-		transactions.reduce((prev: any, curr: any) => {
-			const category = curr.category;
+		transactions.reduce((prev: any, curr) => {
+			const expenseCategory = expenseCategoriesSeed.find(
+				(x) => x.id == curr.category
+			);
+
+			if (!expenseCategory) return;
+
 			const value = curr.value;
+			const category = expenseCategory.name;
 
 			return (
 				prev[category]
