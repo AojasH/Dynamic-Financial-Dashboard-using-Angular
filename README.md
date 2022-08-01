@@ -6,14 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Application created as a means of putting into practice what I learned with Alura's TypeScript and Angular courses.
 
 # Goal
-Create an application that the user can manage their finances in a simple and clear way, without many configuration parameters like the applications on the market. 
+Create a modern interface in Angular and improve my TypeScript skills.
 
-# TO-DO
-
-* Create unit tests
-* Improve application accessibility 
-* Create light theme
-* Create .NET backend
+# Features
+* Modal to add new transaction
+* Updates all charts when a new transaction is added
+* Use Mirage.js to mock an API and use HttpClient service in Angular
+* Responsible design (Mobile, Tablet and Desktop)
 
 ## Dev
 
