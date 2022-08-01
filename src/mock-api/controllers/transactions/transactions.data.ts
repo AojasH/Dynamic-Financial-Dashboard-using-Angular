@@ -7,6 +7,7 @@ export const transactionsSeed: Transaction[] = [
 		category: 'Comida',
 		value: 57.86,
 		method: {
+			id: 'credit_card_master',
 			name: 'Cartão de Crédito',
 			flag: 'mastercard',
 			icon: 'mastercard_icon',
@@ -17,20 +18,14 @@ export const transactionsSeed: Transaction[] = [
 		date: new Date('03/21/2022'),
 		category: 'Comida',
 		value: 238.16,
-		method: {
-			name: 'PIX',
-			icon: 'pix_icon',
-		},
+		method: { id: 'pix', name: 'PIX', icon: 'pix_icon' },
 	},
 	{
 		name: 'Financiamento Carro',
 		date: new Date('03/01/2022'),
 		category: 'Carro',
 		value: 700,
-		method: {
-			name: 'Dinheiro',
-			icon: 'money_icon',
-		},
+		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},
 	{
 		name: 'Uber',
@@ -38,6 +33,7 @@ export const transactionsSeed: Transaction[] = [
 		category: 'Transporte',
 		value: 11.9,
 		method: {
+			id: 'credit_card_master',
 			name: 'Cartão de Crédito',
 			flag: 'mastercard',
 			icon: 'mastercard_icon',
@@ -49,6 +45,7 @@ export const transactionsSeed: Transaction[] = [
 		category: 'Transporte',
 		value: 10.94,
 		method: {
+			id: 'credit_card_master',
 			name: 'Cartão de Crédito',
 			flag: 'mastercard',
 			icon: 'mastercard_icon',
@@ -60,6 +57,7 @@ export const transactionsSeed: Transaction[] = [
 		category: 'Jogos',
 		value: 29.99,
 		method: {
+			id: 'credit_card_master',
 			name: 'Cartão de Crédito',
 			flag: 'mastercard',
 			icon: 'mastercard_icon',
@@ -71,6 +69,7 @@ export const transactionsSeed: Transaction[] = [
 		category: 'Streaming',
 		value: 29.99,
 		method: {
+			id: 'credit_card_master',
 			name: 'Cartão de Crédito',
 			flag: 'mastercard',
 			icon: 'mastercard_icon',
@@ -82,6 +81,7 @@ export const transactionsSeed: Transaction[] = [
 		category: 'Streaming',
 		value: 39.9,
 		method: {
+			id: 'credit_card_master',
 			name: 'Cartão de Crédito',
 			flag: 'mastercard',
 			icon: 'mastercard_icon',
@@ -93,6 +93,7 @@ export const transactionsSeed: Transaction[] = [
 		category: 'Carro',
 		value: 150,
 		method: {
+			id: 'credit_card_master',
 			name: 'Cartão de Crédito',
 			flag: 'mastercard',
 			icon: 'mastercard_icon',
@@ -103,29 +104,20 @@ export const transactionsSeed: Transaction[] = [
 		date: new Date('03/12/2022'),
 		category: 'Carro',
 		value: 18,
-		method: {
-			name: 'Dinheiro',
-			icon: 'money_icon',
-		},
+		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},
 	{
 		name: 'Faculdade',
 		date: new Date('03/01/2022'),
 		category: 'Educação',
 		value: 1200,
-		method: {
-			name: 'Dinheiro',
-			icon: 'money_icon',
-		},
+		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},
 	{
 		name: 'Poupança',
 		date: new Date('03/01/2022'),
 		category: 'Investimentos',
 		value: 500,
-		method: {
-			name: 'Dinheiro',
-			icon: 'money_icon',
-		},
+		method: { id: 'money', name: 'Dinheiro', icon: 'money_icon' },
 	},
 ];

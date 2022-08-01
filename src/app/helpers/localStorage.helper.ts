@@ -1,5 +1,5 @@
-export function lsSave(obj: object) {
-	localStorage.setItem('transactions', JSON.stringify(obj));
+export function lsSave(obj: object, name: string) {
+	localStorage.setItem(name, JSON.stringify(obj));
 }
 
 export function lsRead(key: string) {
