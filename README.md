@@ -11,7 +11,7 @@ Create a modern interface in Angular and improve my TypeScript skills.
 # Features
 * Modal to add new transaction
 * Updates all charts when a new transaction is added
-* Use Mirage.js to mock an API and use HttpClient service in Angular
+* Mirage.js to mock an API and use HttpClient service in Angular
 * Responsible design (Mobile, Tablet and Desktop)
 
 ## Dev
