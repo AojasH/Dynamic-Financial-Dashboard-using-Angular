@@ -1,6 +1,3 @@
-# Goal
-Create a modern interface in Angular.
-
 # Features
 * Modal to add new transaction
 * Updates all charts when a new transaction is added
