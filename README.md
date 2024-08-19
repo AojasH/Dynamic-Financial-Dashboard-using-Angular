@@ -1,12 +1,5 @@
-# Financial Application
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
-
-# Motivation
-Application created as a means of putting into practice what I learned with Alura's TypeScript and Angular courses.
-
 # Goal
-Create a modern interface in Angular and improve my TypeScript skills.
+Create a modern interface in Angular.
 
 # Features
 * Modal to add new transaction
